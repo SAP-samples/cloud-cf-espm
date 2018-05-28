@@ -1,0 +1,46 @@
+{
+	"welcomeFile": "webshop/index.html",
+	"authenticationMethod": "route",
+	"logout": {
+		"logoutEndpoint": "/do/logout"
+	},
+	"routes": [
+	{
+		"source": "/espm-cloud-web/espm.svc/secure/(.*)$",
+		"destination": "securedest",
+		"scope": "$XSAPPNAME.Create",
+		"authenticationType": "xsuaa"
+	},
+	{
+		"source": "/espm-cloud-web/espm.svc/(.*)$",
+		"destination": "dest",
+		"authenticationType": "none"
+	},
+	
+	{
+		"source": "/images/",
+		"destination": "dest",
+		"authenticationType": "none"
+	},
+	{
+      "source": "^/webshop/(.*)",
+      "localDir": "resources",
+      "replace": {
+        "pathSuffixes": [
+          "index.html"
+        ]
+      },
+	"authenticationType": "none"
+    },
+    {
+      "source": "^/retailer/(.*)",
+      "localDir": "resources",
+      "replace": {
+        "pathSuffixes": [
+          "index.html"
+        ]
+      },
+	"authenticationType": "xsuaa"
+    }
+	]
+}

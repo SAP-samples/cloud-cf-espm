@@ -1,0 +1,12 @@
+{
+    "name": "com.espm.ui",
+    "version": "1.0.0",
+    "description": "UI application",
+    "private": true,     
+    "dependencies": {
+        "@sap/approuter": "^2.8.2"
+    },
+    "scripts": {
+        "start": "node node_modules/@sap/approuter/approuter.js"
+    }
+}

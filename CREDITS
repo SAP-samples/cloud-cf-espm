@@ -1,0 +1,37 @@
+This program references the following third party open source or other free download components.
+The third party licensors of these components may provide additional license rights,
+terms and conditions and/or require certain notices as described below.
+
+EclipseLink (JPA) (https://eclipse.org/eclipselink/)
+Licensed under Eclipse Public License - v 1.0 - http://www.eclipse.org/legal/epl-v10.html
+Licensed under Eclipse Distribution License - v 1.0 - http://www.eclipse.org/org/documents/edl-v10.php
+
+Commons DBCP (https://commons.apache.org/proper/commons-dbcp/)
+Licensed under Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0
+
+PostgreSQL JDBC Driver (https://jdbc.postgresql.org/)
+Licensed under BSD 2-Clause "Simplified" License - https://github.com/pgjdbc/pgjdbc/blob/master/LICENSE
+
+Apache HTTP Components (https://hc.apache.org/)
+Licensed under Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0
+
+JUnit (https://junit.org/junit4/)
+Licensed under Eclipse Public License 1.0 - http://www.eclipse.org/legal/epl-v10.html
+
+Derby (http://db.apache.org/derby/)
+Licensed under Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0
+
+SLF4J (http://www.slf4j.org/)
+Licensed under MIT - http://www.slf4j.org/license.html
+
+Apache CXF (http://cxf.apache.org/)
+Licensed under Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0
+
+Apache Olingo (https://olingo.apache.org/)
+Licensed under Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0
+
+Codehaus Jettison (https://github.com/jettison-json/jettison)
+Licensed under Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0
+
+Jackson Databind (https://github.com/FasterXML/jackson)
+Licensed under Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0

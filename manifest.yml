@@ -1,0 +1,26 @@
+---
+applications:
+- name: refapps-espm
+  host: refapps-espm
+  memory: 1G
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  path: java/espm-cloud-web/target/espm-cloud-web.war
+  env:
+    CORS_DOMAIN: "cfapps.sap.hana.ondemand.com"
+    DATABASE_TYPE: "postgresql"
+  services:
+    - espm-postgres
+    - espm-uaa-refapps
+- name: refapps-espm-ui
+  host: refapps-espm-ui
+  memory: 128M
+  path: web
+  env:
+    TENANT_HOST_PATTERN: "^(.*).cfapps.sap.hana.ondemand.com"
+    destinations: >
+      [
+        {"name":"securedest", "url":"https://refapps-espm.cfapps.sap.hana.ondemand.com", "forwardAuthToken": true },
+        {"name":"dest", "url":"https://refapps-espm.cfapps.sap.hana.ondemand.com"}
+      ]
+  services:
+    - espm-uaa-refapps

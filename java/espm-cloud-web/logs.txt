@@ -1,0 +1,235 @@
+Connected, dumping recent logs for app espm in org trial / space c5230553 as c5230553...
+
+2017-03-16T15:53:51.62+0530 [API/0]      OUT Updated app with guid e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1 ({"state"=>"STOPPED"})
+2017-03-16T15:53:51.62+0530 [CELL/0]     OUT Exit status 0
+2017-03-16T15:53:51.67+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Pausing ProtocolHandler ["http-nio-8080"]
+2017-03-16T15:53:51.72+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.core.StandardService           INFO    Stopping service Catalina
+2017-03-16T15:53:51.88+0530 [APP/PROC/WEB/0]OUT [EL Info]: connection: 2017-03-16 10:23:51.878--ServerSession(1574933381)--/file:/home/vcap/app/.java-buildpack/tomcat/webapps/ROOT/WEB-INF/lib/espm-cloud-jpa-2.0.0.jar_com.sap.espm.model_nonJtaDataSource=1361873564 logout successful
+2017-03-16T15:53:51.93+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.loader.WebappClassLoaderBase   WARNING The web application [ROOT] registered the JDBC driver [com.sap.db.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+2017-03-16T15:53:51.96+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Stopping ProtocolHandler ["http-nio-8080"]
+2017-03-16T15:53:51.99+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Destroying ProtocolHandler ["http-nio-8080"]
+2017-03-16T15:53:52.07+0530 [APP/PROC/WEB/0]OUT Exit status 143
+2017-03-16T15:53:52.14+0530 [CELL/0]     OUT Destroying container
+2017-03-16T15:53:52.89+0530 [CELL/0]     OUT Successfully destroyed container
+2017-03-16T15:54:01.07+0530 [API/0]      OUT Updated app with guid e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1 ({"state"=>"STARTED"})
+2017-03-16T15:54:01.31+0530 [CELL/0]     OUT Creating container
+2017-03-16T15:54:02.05+0530 [CELL/0]     OUT Successfully created container
+2017-03-16T15:54:05.94+0530 [CELL/0]     OUT Starting health monitoring of container
+2017-03-16T15:54:06.67+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Initializing ProtocolHandler ["http-nio-8080"]
+2017-03-16T15:54:06.69+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.Catalina               INFO    Initialization processed in 518 ms
+2017-03-16T15:54:06.70+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.core.StandardService           INFO    Starting service Catalina
+2017-03-16T15:54:06.70+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.core.StandardEngine            INFO    Starting Servlet Engine: Apache Tomcat/8.0.41
+2017-03-16T15:54:06.73+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.HostConfig             INFO    Deploying web application directory /home/vcap/app/.java-buildpack/tomcat/webapps/ROOT
+2017-03-16T15:54:09.33+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.jasper.servlet.TldScanner               INFO    At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2017-03-16T15:54:09.35+0530 [APP/PROC/WEB/0]OUT [CONTAINER] lina.core.ContainerBase.[Catalina].[localhost].[/] SEVERE  For security constraints with URL pattern [/espm.svc/secure/*] only the HTTP methods [DELETE POST GET PUT] are covered. All other methods are uncovered.
+2017-03-16T15:54:10.12+0530 [APP/PROC/WEB/0]OUT [EL Info]: 2017-03-16 10:24:10.111--ServerSession(149395017)--EclipseLink, version: Eclipse Persistence Services - 2.6.4.v20160829-44060b6
+2017-03-16T15:54:10.29+0530 [APP/PROC/WEB/0]OUT [EL Warning]: metadata: 2017-03-16 10:24:10.291--ServerSession(149395017)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [salesOrderHeader] for the entity class [class com.sap.espm.model.SalesOrderItem] since weaving was not enabled or did not occur.
+2017-03-16T15:54:10.33+0530 [APP/PROC/WEB/0]OUT [EL Info]: connection: 2017-03-16 10:24:10.33--ServerSession(149395017)--/file:/home/vcap/app/.java-buildpack/tomcat/webapps/ROOT/WEB-INF/lib/espm-cloud-jpa-2.0.0.jar_com.sap.espm.model_nonJtaDataSource=1676089796 login successful
+2017-03-16T15:54:11.20+0530 [APP/PROC/WEB/0]ERR log4j:WARN No appenders could be found for logger (com.sap.espm.model.data.DataLoader).
+2017-03-16T15:54:11.20+0530 [APP/PROC/WEB/0]ERR log4j:WARN Please initialize the log4j system properly.
+2017-03-16T15:54:11.20+0530 [APP/PROC/WEB/0]ERR log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+2017-03-16T15:54:14.68+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.HostConfig             INFO    Deployment of web application directory /home/vcap/app/.java-buildpack/tomcat/webapps/ROOT has finished in 7,953 ms
+2017-03-16T15:54:14.68+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Starting ProtocolHandler ["http-nio-8080"]
+2017-03-16T15:54:14.69+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.tomcat.util.net.NioSelectorPool         INFO    Using a shared selector for servlet write/read
+2017-03-16T15:54:14.69+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.Catalina               INFO    Server startup in 8005 ms
+2017-03-16T15:54:16.50+0530 [CELL/0]     OUT Container became healthy
+2017-03-16T16:01:38.31+0530 [API/0]      OUT Updated app with guid e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1 ({"name"=>"espm", "memory"=>1024, "environment_json"=>"PRIVATE DATA HIDDEN"})
+2017-03-16T16:02:31.37+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Pausing ProtocolHandler ["http-nio-8080"]
+2017-03-16T16:02:31.37+0530 [API/0]      OUT Updated app with guid e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1 ({"state"=>"STOPPED"})
+2017-03-16T16:02:31.39+0530 [CELL/0]     OUT Exit status 0
+2017-03-16T16:02:31.42+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.core.StandardService           INFO    Stopping service Catalina
+2017-03-16T16:02:31.42+0530 [APP/PROC/WEB/0]OUT [EL Info]: connection: 2017-03-16 10:32:31.428--ServerSession(149395017)--/file:/home/vcap/app/.java-buildpack/tomcat/webapps/ROOT/WEB-INF/lib/espm-cloud-jpa-2.0.0.jar_com.sap.espm.model_nonJtaDataSource=1676089796 logout successful
+2017-03-16T16:02:31.44+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.loader.WebappClassLoaderBase   WARNING The web application [ROOT] registered the JDBC driver [com.sap.db.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+2017-03-16T16:02:31.45+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Stopping ProtocolHandler ["http-nio-8080"]
+2017-03-16T16:02:31.45+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Destroying ProtocolHandler ["http-nio-8080"]
+2017-03-16T16:02:31.47+0530 [APP/PROC/WEB/0]OUT Exit status 143
+2017-03-16T16:02:31.48+0530 [CELL/0]     OUT Destroying container
+2017-03-16T16:02:32.11+0530 [CELL/0]     OUT Successfully destroyed container
+2017-03-16T16:02:35.44+0530 [API/0]      OUT Updated app with guid e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1 ({"state"=>"STARTED"})
+2017-03-16T16:02:35.64+0530 [STG/0]      OUT Downloading sap_java_buildpack...
+2017-03-16T16:02:35.64+0530 [STG/0]      OUT Downloading staticfile_buildpack...
+2017-03-16T16:02:35.64+0530 [STG/0]      OUT Downloading nodejs_buildpack...
+2017-03-16T16:02:35.64+0530 [STG/0]      OUT Downloading java_buildpack...
+2017-03-16T16:02:35.64+0530 [STG/0]      OUT Downloading ruby_buildpack...
+2017-03-16T16:02:35.66+0530 [STG/0]      OUT Downloaded java_buildpack
+2017-03-16T16:02:35.66+0530 [STG/0]      OUT Downloading go_buildpack...
+2017-03-16T16:02:35.66+0530 [STG/0]      OUT Downloaded sap_java_buildpack
+2017-03-16T16:02:35.66+0530 [STG/0]      OUT Downloading python_buildpack...
+2017-03-16T16:02:35.66+0530 [STG/0]      OUT Downloaded ruby_buildpack
+2017-03-16T16:02:35.66+0530 [STG/0]      OUT Downloading binary_buildpack...
+2017-03-16T16:02:35.67+0530 [STG/0]      OUT Downloaded staticfile_buildpack
+2017-03-16T16:02:35.67+0530 [STG/0]      OUT Downloading dotnet_core_buildpack...
+2017-03-16T16:02:35.67+0530 [STG/0]      OUT Downloaded nodejs_buildpack
+2017-03-16T16:02:35.67+0530 [STG/0]      OUT Downloading php_buildpack...
+2017-03-16T16:02:35.68+0530 [STG/0]      OUT Downloaded go_buildpack
+2017-03-16T16:02:35.68+0530 [STG/0]      OUT Downloaded python_buildpack
+2017-03-16T16:02:35.69+0530 [STG/0]      OUT Downloaded dotnet_core_buildpack
+2017-03-16T16:02:35.70+0530 [STG/0]      OUT Downloaded php_buildpack
+2017-03-16T16:02:35.71+0530 [STG/0]      OUT Downloaded binary_buildpack
+2017-03-16T16:02:35.71+0530 [STG/0]      OUT Creating container
+2017-03-16T16:02:36.22+0530 [STG/0]      OUT Successfully created container
+2017-03-16T16:02:36.22+0530 [STG/0]      OUT Downloading app package...
+2017-03-16T16:02:37.17+0530 [STG/0]      OUT Downloaded app package (21.1M)
+2017-03-16T16:02:37.17+0530 [STG/0]      OUT Downloading build artifacts cache...
+2017-03-16T16:02:38.52+0530 [STG/0]      OUT Downloaded build artifacts cache (52.6M)
+2017-03-16T16:02:38.52+0530 [STG/0]      OUT Staging...
+2017-03-16T16:02:41.56+0530 [STG/0]      OUT -----> Java Buildpack Version: v3.12 | https://github.com/cloudfoundry/java-buildpack.git#6f25b7e
+2017-03-16T16:02:41.75+0530 [STG/0]      OUT -----> Downloading Open Jdk JRE 1.8.0_121 from https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_121.tar.gz (found in cache)
+2017-03-16T16:02:42.82+0530 [STG/0]      OUT        Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.0s)
+2017-03-16T16:02:42.85+0530 [STG/0]      OUT -----> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz (found in cache)
+2017-03-16T16:02:42.87+0530 [STG/0]      OUT        Memory Settings: -Xms681574K -XX:MetaspaceSize=104857K -XX:MaxMetaspaceSize=104857K -Xss349K -Xmx681574K
+2017-03-16T16:02:42.90+0530 [STG/0]      OUT -----> Downloading Container Certificate Trust Store 1.1.0_RELEASE from https://java-buildpack.cloudfoundry.org/container-certificate-trust-store/container-certificate-trust-store-1.1.0_RELEASE.jar (found in cache)
+2017-03-16T16:02:43.51+0530 [STG/0]      OUT        Adding certificates to .java-buildpack/container_certificate_trust_store/truststore.jks (0.6s)
+2017-03-16T16:02:43.53+0530 [STG/0]      OUT -----> Downloading Tomcat Instance 8.0.41 from https://java-buildpack.cloudfoundry.org/tomcat/tomcat-8.0.41.tar.gz (found in cache)
+2017-03-16T16:02:43.64+0530 [STG/0]      OUT        Expanding Tomcat Instance to .java-buildpack/tomcat (0.1s)
+2017-03-16T16:02:43.67+0530 [STG/0]      OUT -----> Downloading Tomcat Lifecycle Support 2.5.0_RELEASE from https://java-buildpack.cloudfoundry.org/tomcat-lifecycle-support/tomcat-lifecycle-support-2.5.0_RELEASE.jar (found in cache)
+2017-03-16T16:02:43.68+0530 [STG/0]      OUT -----> Downloading Tomcat Logging Support 2.5.0_RELEASE from https://java-buildpack.cloudfoundry.org/tomcat-logging-support/tomcat-logging-support-2.5.0_RELEASE.jar (found in cache)
+2017-03-16T16:02:43.70+0530 [STG/0]      OUT -----> Downloading Tomcat Access Logging Support 2.5.0_RELEASE from https://java-buildpack.cloudfoundry.org/tomcat-access-logging-support/tomcat-access-logging-support-2.5.0_RELEASE.jar (found in cache)
+2017-03-16T16:02:54.16+0530 [STG/0]      OUT Exit status 0
+2017-03-16T16:02:54.16+0530 [STG/0]      OUT Staging complete
+2017-03-16T16:02:54.16+0530 [STG/0]      OUT Uploading droplet, build artifacts cache...
+2017-03-16T16:02:54.16+0530 [STG/0]      OUT Uploading droplet...
+2017-03-16T16:02:54.16+0530 [STG/0]      OUT Uploading build artifacts cache...
+2017-03-16T16:02:57.68+0530 [STG/0]      OUT Uploaded build artifacts cache (52.6M)
+2017-03-16T16:02:58.70+0530 [STG/0]      OUT Uploaded droplet (72.6M)
+2017-03-16T16:02:58.72+0530 [STG/0]      OUT Uploading complete
+2017-03-16T16:02:58.74+0530 [STG/0]      OUT Destroying container
+2017-03-16T16:03:03.05+0530 [STG/0]      OUT Successfully destroyed container
+2017-03-16T16:03:03.49+0530 [CELL/0]     OUT Creating container
+2017-03-16T16:03:04.27+0530 [CELL/0]     OUT Successfully created container
+2017-03-16T16:03:10.07+0530 [CELL/0]     OUT Starting health monitoring of container
+2017-03-16T16:03:10.81+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Initializing ProtocolHandler ["http-nio-8080"]
+2017-03-16T16:03:10.82+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.Catalina               INFO    Initialization processed in 485 ms
+2017-03-16T16:03:10.82+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.core.StandardService           INFO    Starting service Catalina
+2017-03-16T16:03:10.83+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.core.StandardEngine            INFO    Starting Servlet Engine: Apache Tomcat/8.0.41
+2017-03-16T16:03:10.84+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.HostConfig             INFO    Deploying web application directory /home/vcap/app/.java-buildpack/tomcat/webapps/ROOT
+2017-03-16T16:03:12.98+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.jasper.servlet.TldScanner               INFO    At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2017-03-16T16:03:13.01+0530 [APP/PROC/WEB/0]OUT [CONTAINER] lina.core.ContainerBase.[Catalina].[localhost].[/] SEVERE  For security constraints with URL pattern [/espm.svc/secure/*] only the HTTP methods [DELETE POST GET PUT] are covered. All other methods are uncovered.
+2017-03-16T16:03:13.44+0530 [APP/PROC/WEB/0]OUT ds:USR_1J39VP1CMMB98K0LCWT5E4Y53
+2017-03-16T16:03:14.00+0530 [APP/PROC/WEB/0]OUT [EL Info]: 2017-03-16 10:33:13.996--ServerSession(1574933381)--EclipseLink, version: Eclipse Persistence Services - 2.6.4.v20160829-44060b6
+2017-03-16T16:03:14.15+0530 [APP/PROC/WEB/0]OUT [EL Warning]: metadata: 2017-03-16 10:33:14.156--ServerSession(1574933381)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [salesOrderHeader] for the entity class [class com.sap.espm.model.SalesOrderItem] since weaving was not enabled or did not occur.
+2017-03-16T16:03:14.19+0530 [APP/PROC/WEB/0]OUT [EL Info]: connection: 2017-03-16 10:33:14.194--ServerSession(1574933381)--/file:/home/vcap/app/.java-buildpack/tomcat/webapps/ROOT/WEB-INF/lib/espm-cloud-jpa-2.0.0.jar_com.sap.espm.model_nonJtaDataSource=1361873564 login successful
+2017-03-16T16:03:15.02+0530 [APP/PROC/WEB/0]ERR log4j:WARN No appenders could be found for logger (com.sap.espm.model.data.DataLoader).
+2017-03-16T16:03:15.02+0530 [APP/PROC/WEB/0]ERR log4j:WARN Please initialize the log4j system properly.
+2017-03-16T16:03:15.02+0530 [APP/PROC/WEB/0]ERR log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+2017-03-16T16:03:18.22+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.HostConfig             INFO    Deployment of web application directory /home/vcap/app/.java-buildpack/tomcat/webapps/ROOT has finished in 7,374 ms
+2017-03-16T16:03:18.22+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Starting ProtocolHandler ["http-nio-8080"]
+2017-03-16T16:03:18.23+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.tomcat.util.net.NioSelectorPool         INFO    Using a shared selector for servlet write/read
+2017-03-16T16:03:18.23+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.Catalina               INFO    Server startup in 7418 ms
+2017-03-16T16:03:18.51+0530 [CELL/0]     OUT Container became healthy
+2017-03-16T16:08:21.27+0530 [API/0]      OUT Updated app with guid e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1 ({"name"=>"espm", "memory"=>1024, "environment_json"=>"PRIVATE DATA HIDDEN"})
+2017-03-16T16:09:31.59+0530 [API/0]      OUT Updated app with guid e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1 ({"state"=>"STOPPED"})
+2017-03-16T16:09:31.59+0530 [CELL/0]     OUT Exit status 0
+2017-03-16T16:09:31.59+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Pausing ProtocolHandler ["http-nio-8080"]
+2017-03-16T16:09:31.59+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.core.StandardService           INFO    Stopping service Catalina
+2017-03-16T16:09:31.60+0530 [APP/PROC/WEB/0]OUT [EL Info]: connection: 2017-03-16 10:39:31.599--ServerSession(1574933381)--/file:/home/vcap/app/.java-buildpack/tomcat/webapps/ROOT/WEB-INF/lib/espm-cloud-jpa-2.0.0.jar_com.sap.espm.model_nonJtaDataSource=1361873564 logout successful
+2017-03-16T16:09:31.60+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.loader.WebappClassLoaderBase   WARNING The web application [ROOT] registered the JDBC driver [com.sap.db.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+2017-03-16T16:09:31.61+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Stopping ProtocolHandler ["http-nio-8080"]
+2017-03-16T16:09:31.62+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Destroying ProtocolHandler ["http-nio-8080"]
+2017-03-16T16:09:31.65+0530 [APP/PROC/WEB/0]OUT Exit status 143
+2017-03-16T16:09:31.67+0530 [CELL/0]     OUT Destroying container
+2017-03-16T16:09:32.36+0530 [CELL/0]     OUT Successfully destroyed container
+2017-03-16T16:09:40.69+0530 [API/0]      OUT Updated app with guid e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1 ({"state"=>"STARTED"})
+2017-03-16T16:09:40.92+0530 [STG/0]      OUT Downloading sap_java_buildpack...
+2017-03-16T16:09:40.92+0530 [STG/0]      OUT Downloading ruby_buildpack...
+2017-03-16T16:09:40.92+0530 [STG/0]      OUT Downloading staticfile_buildpack...
+2017-03-16T16:09:40.92+0530 [STG/0]      OUT Downloading java_buildpack...
+2017-03-16T16:09:40.92+0530 [STG/0]      OUT Downloading binary_buildpack...
+2017-03-16T16:09:40.94+0530 [STG/0]      OUT Downloaded java_buildpack
+2017-03-16T16:09:40.94+0530 [STG/0]      OUT Downloading php_buildpack...
+2017-03-16T16:09:40.95+0530 [STG/0]      OUT Downloaded binary_buildpack
+2017-03-16T16:09:40.95+0530 [STG/0]      OUT Downloading nodejs_buildpack...
+2017-03-16T16:09:40.95+0530 [STG/0]      OUT Downloaded sap_java_buildpack
+2017-03-16T16:09:40.95+0530 [STG/0]      OUT Downloading dotnet_core_buildpack...
+2017-03-16T16:09:40.96+0530 [STG/0]      OUT Downloaded php_buildpack
+2017-03-16T16:09:40.96+0530 [STG/0]      OUT Downloading go_buildpack...
+2017-03-16T16:09:40.97+0530 [STG/0]      OUT Downloaded nodejs_buildpack
+2017-03-16T16:09:40.97+0530 [STG/0]      OUT Downloading python_buildpack...
+2017-03-16T16:09:40.97+0530 [STG/0]      OUT Downloaded staticfile_buildpack
+2017-03-16T16:09:40.98+0530 [STG/0]      OUT Downloaded python_buildpack
+2017-03-16T16:09:40.99+0530 [STG/0]      OUT Downloaded ruby_buildpack
+2017-03-16T16:09:40.99+0530 [STG/0]      OUT Downloaded go_buildpack
+2017-03-16T16:09:40.99+0530 [STG/0]      OUT Downloaded dotnet_core_buildpack
+2017-03-16T16:09:40.99+0530 [STG/0]      OUT Creating container
+2017-03-16T16:09:41.71+0530 [STG/0]      OUT Successfully created container
+2017-03-16T16:09:41.71+0530 [STG/0]      OUT Downloading app package...
+2017-03-16T16:09:42.63+0530 [STG/0]      OUT Downloaded app package (21.1M)
+2017-03-16T16:09:42.63+0530 [STG/0]      OUT Downloading build artifacts cache...
+2017-03-16T16:09:43.99+0530 [STG/0]      OUT Downloaded build artifacts cache (52.6M)
+2017-03-16T16:09:43.99+0530 [STG/0]      OUT Staging...
+2017-03-16T16:09:47.23+0530 [STG/0]      OUT -----> Java Buildpack Version: v3.12 | https://github.com/cloudfoundry/java-buildpack.git#6f25b7e
+2017-03-16T16:09:47.42+0530 [STG/0]      OUT -----> Downloading Open Jdk JRE 1.8.0_121 from https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_121.tar.gz (found in cache)
+2017-03-16T16:09:48.55+0530 [STG/0]      OUT        Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.1s)
+2017-03-16T16:09:48.57+0530 [STG/0]      OUT -----> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz (found in cache)
+2017-03-16T16:09:48.60+0530 [STG/0]      OUT        Memory Settings: -Xss349K -Xmx681574K -Xms681574K -XX:MetaspaceSize=104857K -XX:MaxMetaspaceSize=104857K
+2017-03-16T16:09:48.62+0530 [STG/0]      OUT -----> Downloading Container Certificate Trust Store 1.1.0_RELEASE from https://java-buildpack.cloudfoundry.org/container-certificate-trust-store/container-certificate-trust-store-1.1.0_RELEASE.jar (found in cache)
+2017-03-16T16:09:49.11+0530 [STG/0]      OUT        Adding certificates to .java-buildpack/container_certificate_trust_store/truststore.jks (0.4s)
+2017-03-16T16:09:49.13+0530 [STG/0]      OUT -----> Downloading Tomcat Instance 8.0.41 from https://java-buildpack.cloudfoundry.org/tomcat/tomcat-8.0.41.tar.gz (found in cache)
+2017-03-16T16:09:49.27+0530 [STG/0]      OUT        Expanding Tomcat Instance to .java-buildpack/tomcat (0.1s)
+2017-03-16T16:09:49.29+0530 [STG/0]      OUT -----> Downloading Tomcat Lifecycle Support 2.5.0_RELEASE from https://java-buildpack.cloudfoundry.org/tomcat-lifecycle-support/tomcat-lifecycle-support-2.5.0_RELEASE.jar (found in cache)
+2017-03-16T16:09:49.31+0530 [STG/0]      OUT -----> Downloading Tomcat Logging Support 2.5.0_RELEASE from https://java-buildpack.cloudfoundry.org/tomcat-logging-support/tomcat-logging-support-2.5.0_RELEASE.jar (found in cache)
+2017-03-16T16:09:49.33+0530 [STG/0]      OUT -----> Downloading Tomcat Access Logging Support 2.5.0_RELEASE from https://java-buildpack.cloudfoundry.org/tomcat-access-logging-support/tomcat-access-logging-support-2.5.0_RELEASE.jar (found in cache)
+2017-03-16T16:09:59.91+0530 [STG/0]      OUT Exit status 0
+2017-03-16T16:09:59.91+0530 [STG/0]      OUT Staging complete
+2017-03-16T16:09:59.91+0530 [STG/0]      OUT Uploading droplet, build artifacts cache...
+2017-03-16T16:09:59.91+0530 [STG/0]      OUT Uploading build artifacts cache...
+2017-03-16T16:09:59.91+0530 [STG/0]      OUT Uploading droplet...
+2017-03-16T16:10:01.19+0530 [STG/0]      OUT Uploaded build artifacts cache (52.6M)
+2017-03-16T16:10:11.09+0530 [STG/0]      OUT Uploaded droplet (72.6M)
+2017-03-16T16:10:11.10+0530 [STG/0]      OUT Uploading complete
+2017-03-16T16:10:11.14+0530 [STG/0]      OUT Destroying container
+2017-03-16T16:10:13.32+0530 [CELL/0]     OUT Creating container
+2017-03-16T16:10:13.95+0530 [CELL/0]     OUT Successfully created container
+2017-03-16T16:10:15.61+0530 [STG/0]      OUT Successfully destroyed container
+2017-03-16T16:10:18.02+0530 [CELL/0]     OUT Starting health monitoring of container
+2017-03-16T16:10:18.73+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Initializing ProtocolHandler ["http-nio-8080"]
+2017-03-16T16:10:18.74+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.Catalina               INFO    Initialization processed in 480 ms
+2017-03-16T16:10:18.75+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.core.StandardService           INFO    Starting service Catalina
+2017-03-16T16:10:18.75+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.core.StandardEngine            INFO    Starting Servlet Engine: Apache Tomcat/8.0.41
+2017-03-16T16:10:18.76+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.HostConfig             INFO    Deploying web application directory /home/vcap/app/.java-buildpack/tomcat/webapps/ROOT
+2017-03-16T16:10:20.67+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.jasper.servlet.TldScanner               INFO    At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2017-03-16T16:10:20.70+0530 [APP/PROC/WEB/0]OUT [CONTAINER] lina.core.ContainerBase.[Catalina].[localhost].[/] SEVERE  For security constraints with URL pattern [/espm.svc/secure/*] only the HTTP methods [DELETE POST GET PUT] are covered. All other methods are uncovered.
+2017-03-16T16:10:20.75+0530 [APP/PROC/WEB/0]ERR SLF4J: Class path contains multiple SLF4J bindings.
+2017-03-16T16:10:20.75+0530 [APP/PROC/WEB/0]ERR SLF4J: Found binding in [jar:file:/home/vcap/app/.java-buildpack/tomcat/webapps/ROOT/WEB-INF/lib/slf4j-simple-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+2017-03-16T16:10:20.75+0530 [APP/PROC/WEB/0]ERR SLF4J: Found binding in [jar:file:/home/vcap/app/.java-buildpack/tomcat/webapps/ROOT/WEB-INF/lib/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+2017-03-16T16:10:20.75+0530 [APP/PROC/WEB/0]ERR SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+2017-03-16T16:10:20.75+0530 [APP/PROC/WEB/0]ERR SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
+2017-03-16T16:10:21.07+0530 [APP/PROC/WEB/0]OUT ds:USR_1J39VP1CMMB98K0LCWT5E4Y53
+2017-03-16T16:10:21.69+0530 [APP/PROC/WEB/0]OUT [EL Info]: 2017-03-16 10:40:21.689--ServerSession(26823558)--EclipseLink, version: Eclipse Persistence Services - 2.6.4.v20160829-44060b6
+2017-03-16T16:10:21.97+0530 [APP/PROC/WEB/0]OUT [EL Warning]: metadata: 2017-03-16 10:40:21.973--ServerSession(26823558)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [salesOrderHeader] for the entity class [class com.sap.espm.model.SalesOrderItem] since weaving was not enabled or did not occur.
+2017-03-16T16:10:22.03+0530 [APP/PROC/WEB/0]OUT [EL Info]: connection: 2017-03-16 10:40:22.036--ServerSession(26823558)--/file:/home/vcap/app/.java-buildpack/tomcat/webapps/ROOT/WEB-INF/lib/espm-cloud-jpa-2.0.0.jar_com.sap.espm.model_nonJtaDataSource=634510100 login successful
+2017-03-16T16:10:23.16+0530 [APP/PROC/WEB/0]ERR [localhost-startStop-1] INFO com.sap.espm.model.data.DataLoader - 41 customers loaded into the db
+2017-03-16T16:10:23.23+0530 [APP/PROC/WEB/0]ERR [localhost-startStop-1] INFO com.sap.espm.model.data.DataLoader - 9 suppliers loaded into the db
+2017-03-16T16:10:24.97+0530 [APP/PROC/WEB/0]ERR [localhost-startStop-1] INFO com.sap.espm.model.data.DataLoader - 106 Products loaded into the db
+2017-03-16T16:10:24.97+0530 [APP/PROC/WEB/0]ERR [localhost-startStop-1] INFO com.sap.espm.model.data.DataLoader - [com.sap.espm.model.Product@1590a6a6, com.sap.espm.model.Product@53504145, com.sap.espm.model.Product@5c795d41, com.sap.espm.model.Product@6b886882, com.sap.espm.model.Product@5fd971a6, com.sap.espm.model.Product@b24e881, com.sap.espm.model.Product@39f9d8ce, com.sap.espm.model.Product@799d21a6, com.sap.espm.model.Product@4b70f57f, com.sap.espm.model.Product@fdb3d6d, com.sap.espm.model.Product@2d9d748e, com.sap.espm.model.Product@4eff461a, com.sap.espm.model.Product@71728624, com.sap.espm.model.Product@2e9ad526, com.sap.espm.model.Product@1eca52ad, com.sap.espm.model.Product@b44ba8a, com.sap.espm.model.Product@4a602679, com.sap.espm.model.Product@56506cc5, com.sap.espm.model.Product@402f381f, com.sap.espm.model.Product@45dff321, com.sap.espm.model.Product@43938935, com.sap.espm.model.Product@3711b4d8, com.sap.espm.model.Product@1d699caa, com.sap.espm.model.Product@7e10d5a5, com.sap.espm.model.Product@4d2721ea, com.sap.espm.model.Product@5ffe7ba8, com.sap.espm.model.Product@40749b23, com.sap.espm.model.Product@519ef234, com.sap.espm.model.Product@21f81288, com.sap.espm.model.Product@c30aee6, com.sap.espm.model.Product@3892fa41, com.sap.espm.model.Product@56969ece, com.sap.espm.model.Product@daef5df, com.sap.espm.model.Product@5150bc3d, com.sap.espm.model.Product@50854eb4, com.sap.espm.model.Product@3d793f8d, com.sap.espm.model.Product@50364faf, com.sap.espm.model.Product@59602e69, com.sap.espm.model.Product@5f2cdc57, com.sap.espm.model.Product@7ba5ae52, com.sap.espm.model.Product@775a350b, com.sap.espm.model.Product@1b45dc28, com.sap.espm.model.Product@1ea1b9b5, com.sap.espm.model.Product@771a07eb, com.sap.espm.model.Product@7dcde09, com.sap.espm.model.Product@2b020835, com.sap.espm.model.Product@60642339, com.sap.espm.model.Product@2b1e8fe6, com.sap.espm.model.Product@e9cb408, com.sap.espm.model.Product@714ecedf, com.sap.espm.model.Product@91ee8a8, com.sap.espm.model.Product@62922d7c, com.sap.espm.model.Product@24e640b9, com.sap.espm.model.Product@537eb14f, com.sap.espm.model.Product@a0d503a, com.sap.espm.model.Product@7ecdfd80, com.sap.espm.model.Product@1b3fd067, com.sap.espm.model.Product@7ea802ed, com.sap.espm.model.Product@1904c8ec, com.sap.espm.model.Product@7a3fbe57, com.sap.espm.model.Product@4ce2ec7a, com.sap.espm.model.Product@477ca38f, com.sap.espm.model.Product@270e4321, com.sap.espm.model.Product@769c7a4a, com.sap.espm.model.Product@3b300656, com.sap.espm.model.Product@475be5f5, com.sap.espm.model.Product@32938e53, com.sap.espm.model.Product@6f5b40f0, com.sap.espm.model.Product@35bde538, com.sap.espm.model.Product@301a4635, com.sap.espm.model.Product@4192e82f, com.sap.espm.model.Product@41519b1c, com.sap.espm.model.Product@beab27a, com.sap.espm.model.Product@55c8b3ab, com.sap.espm.model.Product@26b7f3c4, com.sap.espm.model.Product@4292cb8a, com.sap.espm.model.Product@3eaae0b2, com.sap.espm.model.Product@627c029d, com.sap.espm.model.Product@537a71ac, com.sap.espm.model.Product@5f913b14, com.sap.espm.model.Product@61dc2ecc, com.sap.espm.model.Product@2ed8b3ef, com.sap.espm.model.Product@7ec492e, com.sap.espm.model.Product@79187358, com.sap.espm.model.Product@63bd9857, com.sap.espm.model.Product@600f4a4e, com.sap.espm.model.Product@b14dae1, com.sap.espm.model.Product@2693c42c, com.sap.espm.model.Product@20ce7bd1, com.sap.espm.model.Product@1a01f57c, com.sap.espm.model.Product@7919e35b, com.sap.espm.model.Product@451ba0db, com.sap.espm.model.Product@4f7c4b49, com.sap.espm.model.Product@41e5f803, com.sap.espm.model.Product@7df2b2dc, com.sap.espm.model.Product@1634e975, com.sap.espm.model.Product@571be6e, com.sap.espm.model.Product@68d4390a, com.sap.espm.model.Product@331190b3, com.sap.espm.model.Product@1b5088a0, com.sap.espm.model.Product@314ce7b2, com.sap.espm.model.Product@6792fb2c, com.sap.espm.model.Product@5528be86, com.sap.espm.model.Product@68100a6b, com.sap.espm.model.Product@564aa5f1, com.sap.espm.model.Product@4851939f]data
+2017-03-16T16:10:25.11+0530 [APP/PROC/WEB/0]ERR [localhost-startStop-1] INFO com.sap.espm.model.data.DataLoader - 18 Products loaded into the db
+2017-03-16T16:10:25.85+0530 [APP/PROC/WEB/0]ERR [localhost-startStop-1] INFO com.sap.espm.model.data.DataLoader - 106 Stocks loaded into the db
+2017-03-16T16:10:25.93+0530 [APP/PROC/WEB/0]ERR [localhost-startStop-1] INFO com.sap.espm.model.data.DataLoader - 22 Product Categories loaded into the db
+2017-03-16T16:10:26.30+0530 [APP/PROC/WEB/0]ERR [localhost-startStop-1] INFO org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be /
+2017-03-16T16:10:26.35+0530 [APP/PROC/WEB/0]ERR [localhost-startStop-1] INFO org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be /
+2017-03-16T16:10:26.36+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.HostConfig             INFO    Deployment of web application directory /home/vcap/app/.java-buildpack/tomcat/webapps/ROOT has finished in 7,598 ms
+2017-03-16T16:10:26.37+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.coyote.http11.Http11NioProtocol         INFO    Starting ProtocolHandler ["http-nio-8080"]
+2017-03-16T16:10:26.37+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.tomcat.util.net.NioSelectorPool         INFO    Using a shared selector for servlet write/read
+2017-03-16T16:10:26.39+0530 [APP/PROC/WEB/0]OUT [CONTAINER] org.apache.catalina.startup.Catalina               INFO    Server startup in 7650 ms
+2017-03-16T16:10:26.47+0530 [CELL/0]     OUT Container became healthy
+2017-03-16T16:12:10.64+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:10.607+0000] "GET /webshop/ HTTP/1.1" 200 0 817 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:49410" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"1ab48792-1bdd-434b-40ba-dd7828212f8c" response_time:0.039726463 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:10.80+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:10.803+0000] "GET /webshop/css/style.css HTTP/1.1" 200 0 89 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:49410" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"d6dd7791-a896-4621-4c63-5947603edf73" response_time:0.005211101 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:12.26+0530 [RTR/0]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:12.257+0000] "GET /webshop/Component-preload.js HTTP/1.1" 404 0 1050 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:40320" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"8ca97075-6ac4-437d-6de5-6690331ed8f4" response_time:0.008031954 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:12.42+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:12.411+0000] "GET /webshop/Component.js HTTP/1.1" 200 0 1101 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:37006" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"a6c2dea6-a770-406f-6ffe-16f39b47a9ef" response_time:0.009745523 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:12.59+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:12.581+0000] "GET /webshop/model/models.js HTTP/1.1" 200 0 272 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:37006" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"198c251a-80ac-4049-5615-8215e699e4cf" response_time:0.008617291 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:12.78+0530 [RTR/0]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:12.773+0000] "GET /webshop/manifest.json HTTP/1.1" 200 0 2489 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:41048" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"2673b430-6b42-4a77-5139-fbba739ea2a7" response_time:0.003569055 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:12.98+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:12.980+0000] "GET /webshop/i18n/i18n.properties HTTP/1.1" 200 0 4749 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:49932" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"d10ac34c-7492-46a0-59e6-00d06a9bdb7a" response_time:0.003222244 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:13.58+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:13.584+0000] "GET /webshop/view/App.view.xml HTTP/1.1" 200 0 250 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:37422" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"dcf10029-b8a1-46f8-56de-92367fb877f2" response_time:0.005002985 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:13.76+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:13.756+0000] "GET /webshop/controller/App.controller.js HTTP/1.1" 200 0 519 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:50238" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"2a5c9cf0-f28d-4730-6b8f-02fb86a92141" response_time:0.003343641 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:13.89+0530 [RTR/0]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:13.890+0000] "GET /webshop/model/formatter.js HTTP/1.1" 200 0 2937 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:41486" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"183268c0-e14e-48d6-628d-42d623df91d7" response_time:0.003056027 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:14.12+0530 [RTR/0]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:14.122+0000] "GET /webshop/view/Home.view.xml HTTP/1.1" 200 0 4608 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:41486" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"eaaba9ff-0b1f-4bba-5bbd-10b36bc4bd44" response_time:0.003060205 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:14.30+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:14.305+0000] "GET /webshop/controller/Home.controller.js HTTP/1.1" 200 0 6086 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:50478" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"9198dd53-2b9a-4a27-752d-7ee120ba9ee8" response_time:0.002886387 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:14.46+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:14.461+0000] "GET /webshop/model/utility.js HTTP/1.1" 200 0 2144 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:50478" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"84844dc7-3c97-4242-4ee6-d25440b3906d" response_time:0.003012959 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:15.12+0530 [RTR/0]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:15.121+0000] "GET /webshop/ HTTP/1.1" 304 0 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:41390" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"40f2c865-9ba9-4557-4a68-f9d0216f896f" response_time:0.006104526 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:15.99+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:15.991+0000] "GET /webshop/Component-preload.js HTTP/1.1" 404 0 1050 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:38480" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"24d09dea-abd4-46c0-5e08-2da4fbf1089e" response_time:0.003648582 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:16.22+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:16.220+0000] "GET /webshop/i18n/i18n_en_US.properties HTTP/1.1" 404 0 1062 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:51352" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"8bc040fd-1b17-4a62-73a5-0d000f381c4c" response_time:0.002587254 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:16.42+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:16.417+0000] "GET /webshop/i18n/i18n_en.properties HTTP/1.1" 404 0 1056 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:51352" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"d42ee46e-d30d-44fc-4779-e02bb5052c24" response_time:0.002758038 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:16.59+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:16.595+0000] "GET /webshop/i18n/i18n_en_US.properties HTTP/1.1" 404 0 1062 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:51352" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"96e8f808-c6c2-43c6-59f3-510902b8e0dd" response_time:0.002392413 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:16.75+0530 [RTR/0]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:16.750+0000] "GET /webshop/i18n/i18n_en.properties HTTP/1.1" 404 0 1056 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:42184" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"e6fe502a-39de-4a96-7cab-64474a5d80a1" response_time:0.00398577 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:17.00+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:17.004+0000] "GET /espm-cloud-web/espm.svc/$metadata HTTP/1.1" 404 0 1060 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:38914" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"cabad81d-e1f6-47fa-654a-5f62677c2f03" response_time:0.004343347 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"
+2017-03-16T16:12:17.39+0530 [RTR/1]      OUT c5230553_espm.cfapps.sap.hana.ondemand.com - [2017-03-16T10:42:17.387+0000] "GET /espm-cloud-web/espm.svc/$metadata HTTP/1.1" 404 0 1060 "https://c5230553_espm.cfapps.sap.hana.ondemand.com/webshop/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.0.129.90:38914" "10.0.135.101:63421" x_forwarded_for:"10.0.1.60, 10.0.129.90" x_forwarded_proto:"https" vcap_request_id:"d16512a2-b1ba-478b-71c5-2bd381bd98e8" response_time:0.004149184 app_id:"e3f8483d-3d2e-422e-b3cc-45d48fc2c0e1" app_index:"0"

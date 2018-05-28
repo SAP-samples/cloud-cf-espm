@@ -1,0 +1,32 @@
+{
+    "xsappname"     : "espm-application",
+    "tenant-mode":"dedicated",
+    "scopes"        : [
+                        {
+                          "name"                 : "$XSAPPNAME.Display",
+                           "description"         : "display"
+                        },
+                        {
+                          "name"                 : "uaa.user",
+                           "description"         : "uaa.user"
+                        },
+                        {
+                          "name"                 : "$XSAPPNAME.Create",
+                          "description"          : "create"
+                        },
+                        {
+                          "name"                 : "$XSAPPNAME.Delete",
+                          "description"          : "delete"
+                        }
+                      ],                      
+    "role-templates": [
+                        {
+                          "name"                 : "Retailer",
+                          "description"          : "ESPM Retailer role",
+                          "scope-references"     : [
+                                                     "$XSAPPNAME.Create", "uaa.user"
+                                                   ]                                            
+                        }                                     
+                        
+                      ]
+}

@@ -1,0 +1,194 @@
+# ESPM in Cloud Foundry
+
+Run ESPM application on SAP Cloud Foundry. 
+
+ESPM application has 2 underlying applications
+- webshop: this application is a webshopping app, which does have any authentication
+- retailer: this application is used by a retailer to manage stocks, approve/reject sales orders. We use authentication here
+
+For more details about the project, please refer to https://github.com/SAP/cloud-espm-v2 
+
+**Note:** If you wish to deploy the application using MTAR, then directly skip to the section [Building MTAR](#building-mtar)
+
+### Running the application
+
+#### 1. Login to Cloud Foundry
+
+```
+cf api <api>
+cf login -o <org> -s <space>
+```
+
+#### 2. Create Service
+
+Depending on the requirement, create a service instance for either of the database (HANA or PostgreSQL).
+
+```
+cf create-service hana schema espm-hana (HANA)
+or
+cf create-service postgresql v9.4-dev espm-postgres (PostgreSQL)
+```
+
+Create service instance for the XSUAA 
+
+```
+cf cs xsuaa default espm-uaa -c xs-security.json
+```
+
+#### 3. Edit Manifest
+
+Open the manifest.yml file and edit the following
+Replace <i-number> placeholders with your ```I/D/C numbers``` so that the application name and host name is unique in the CF landscape.
+
+```DATABASE_TYPE: <DB name>```
+
+Replace the ```<DB name>``` with the Database name for which you have created the service instance
+
+For HANA – ```hana```
+
+For PostgreSQL – ```postgresql```
+
+```<DB instance name>```
+
+Replace the <DB instance name> with the service instance that you have created for the database.
+
+#### 4. Build the application
+
+Maven build the java application to package into a war file
+
+Go to java/ folder and execute ```mvn clean install```
+
+
+```
+Note: When running the application in internet, follow the below steps to download the ngdbc driver to your local ~.m2 repository, as its not available in central maven
+
+1. You need to download the SAP Hana Cloud Platform SDK from here: https://tools.hana.ondemand.com/#cloud
+2. Take the latest "Java Web Tomcat 8" from the download section (a package starting with neo-).
+3. Unzip the archive to an arbitrary location on your devbox.
+4. Extract the JDBC driver (ngdbc.jar) from the archive (you will find the driver in the archive under: repository/.archive/lib/ngdbc.jar). The driver is closed source, so it is NOT available from public Maven repositories!
+5. Put the driver either to your local maven repository with:
+**mvn install:install-file -Dfile=<path-to-file> -DgroupId=com.sap.db \**
+    **-DartifactId=ngdbc -Dversion=2.0.13 -Dpackaging=jar**
+
+``` 
+
+#### 5. Install Dependencies
+
+Go to web/retailer and execute ```npm install```
+
+Go to web/webshop and execute ```npm install```
+
+Make sure you have npm registry = "https://npm.sap.com/"
+
+To setup the registry locally for each command, use the following
+
+```npm install --registry=https://npm.sap.com/ -proxy=null```
+
+#### 6. Push the application
+
+```cf push -f manifest.yml```
+
+
+#### 7. Setup Role collections
+
+We need to setup the Role collections for the UAA, since the Retailer application needs the template role called "Retailer" assigned to the user, for the application to work.
+
+ - In your trial account, in the left pane select Role collections under the Security tab.
+
+ - Add a new Role collection named, "Retailer"
+
+ - Click on the newly created "Retailer "role collection and add new Role.
+
+ - Select the application identifier name similar to the one you have given in the xs-security.json file.
+
+ - Select the role template and assign the Role you have created in the previous step.
+
+#### 8. Assign Role to the user
+
+We need to assign the role which we have created in the previous step to the user.
+
+ - In your trial account, in the left pane select "Trust Configuration" under the Security tab.
+
+ - Click on the default IDP service.
+
+ - Enter username/email and click on the add Assignment button.
+
+ - Select the Role as "Retailer" to assign it to the user.
+
+# Security Implementation
+
+![Security Diagram](/docs/images/ui-merge.jpg?raw=true)
+
+Approuter has been binded to the XSUAA service.
+
+Authentication Method specified in the xs-app.json file with
+
+- Webshop - AuthenticationType: None
+
+- Retailer - AuthenticationType: XSUAA
+
+# Securing the Backend Application
+
+To Secure the backend application, we need to bind the XSUAA service to the backend.
+
+![Backend Security Diagram](/docs/images/ui-merge-backend-uaa.jpg?raw=true)
+
+[spring-security.xml](/espm-cloud-web/src/main/webapp/WEB-INF/spring-security.xml) has been implemented to intercept the url based on the specified scopes.
+
+1. Uncomment the xs2security dependency from the [java/espm-cloud-web/pom.xml](/java/espm-cloud-web/pom.xml)
+
+```
+   <dependency>
+      <groupId>com.sap.xs2.security</groupId>
+      <artifactId>java-container-security</artifactId>
+      <version>0.24.3</version>
+      <scope>compile</scope>
+   </dependency>
+```
+
+And also from [java/pom.xml](/java/pom.xml)
+
+```
+   <dependency>
+      <groupId>com.sap.xs2.security</groupId>
+      <artifactId>java-container-security</artifactId>
+      <version>0.24.3</version>
+   </dependency>
+```
+
+2. Uncomment the listener for spring security in the [web.xml](/java/espm-cloud-web/src/main/webapp/WEB-INF/web.xml) 
+
+```
+
+        <listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring-security.xml</param-value>
+	</context-param>
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+```
+
+# Building MTAR
+
+In your CLI in the ESPM-CF project root folder run the command: 
+
+	java -jar mta.jar --build-target=CF --mtar=espm-cf.mtar build
+	
+# Deploy MTAR
+
+To Deploy MTAR, run the command:
+
+	cf deploy espm-cf.mtar
+
+In case if MTA Plugin is missing, you can download from https://tools.hana.ondemand.com/#cloud
+	
+

@@ -1,0 +1,66 @@
+_schema-version: "2.0.0"
+ID: ESPM_MTA
+version: 1.0.0
+
+modules:
+  - name: espm-backend
+    type: java.tomcat
+    path: java
+    build-parameters:
+      builder: maven
+      build-result: "espm-cloud-web/target/espm-cloud-web.war"
+      timeout: 60m
+      maven-opts:
+        command: [ clean, install ]
+      buildpack: https://github.com/cloudfoundry/java-buildpack.git
+    properties:
+      TARGET_RUNTIME: tomcat
+      SAP_JWT_TRUST_ACL: "[{\"clientid\":\"*\",\"identityzone\":\"*\"}]"
+      DATABASE_TYPE: "postgresql"
+    provides:
+      - name: backend
+        properties:
+          url: "${default-url}"
+      - name: backend-secure
+        properties:
+          url: "${default-url}"
+    requires:
+      - name: espm-uaa
+      - name: espm-postgres
+    parameters:
+      memory: 1G
+  - name: espm-ui
+    type: html5
+    path: web
+    parameters:
+      version: 2.0-${timestamp}
+      memory: 128M
+    build-parameters:
+      builder: npm
+      #build-result: dist
+      timeout: 60m
+    requires:
+      - name: espm-uaa
+      - name: backend-secure
+        group: destinations
+        properties:
+          name: securedest
+          url: '~{url}'
+          forwardAuthToken: true
+      - name: backend
+        group: destinations
+        properties:
+          name: dest
+          url: '~{url}'
+resources:
+  - name: espm-uaa
+    type: com.sap.xs.uaa
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: xs-security.json
+  - name: espm-postgres
+    type: postgresql
+    parameters:
+      service: postgresql
+      service-plan: "v9.4-dev"

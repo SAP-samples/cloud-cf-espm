@@ -1,6 +1,8 @@
 # ESPM in Cloud Foundry
 
-Run ESPM application on SAP Cloud Foundry. 
+The ESPM (Enterprise Sales & Procurement Model) application is a reference application which demonstrates how to build applications on SAP Cloud Platform (CF) with the Java runtime. This project mainly focuses on the migration of the [SAP Cloud Platform (NEO) application](https://github.com/SAP/cloud-espm-v2) to the SAP Cloud Platform (Cloud Foundry).
+
+# Description
 
 ESPM application has 2 underlying applications
 - webshop: this application is a webshopping app, which does have any authentication
@@ -8,9 +10,19 @@ ESPM application has 2 underlying applications
 
 For more details about the project, please refer to https://github.com/SAP/cloud-espm-v2 
 
-**Note:** If you wish to deploy the application using MTAR, then directly skip to the section [Building MTAR](#building-mtar)
+# Requirements
+
+- [Java8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- [Maven](https://maven.apache.org/download.cgi)
+- [CF CLI](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4ef907afb1254e8286882a2bdef0edf4.html)
+- If you do not yet have a Cloud Foundry environment trial or enterprise account, signup for a Cloud Foundry environment trial account by following the [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76e79d62fa0149d5aa7b0698c9a33687.html)
+- To deploy the MTAR we need the MTA CF CLI plugin, download the MTA CF CLI Plugin from [here](https://tools.hana.ondemand.com/#cloud)
+
+# Download and Installation
 
 ### Running the application
+
+**Note:** If you wish to deploy the application using MTAR, then directly skip to the section [Building MTAR](#building-mtar)
 
 #### 1. Login to Cloud Foundry
 
@@ -190,5 +202,14 @@ To Deploy MTAR, run the command:
 	cf deploy espm-cf.mtar
 
 In case if MTA Plugin is missing, you can download from https://tools.hana.ondemand.com/#cloud
-	
+
+# How to Obtain Support
+
+In case you find a bug/need support please create github issues
+
+# License
+
+Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
+This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the [LICENSE](/LICENSE) file.
+
 

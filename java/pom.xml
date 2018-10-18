@@ -46,7 +46,7 @@
 		<httpcore.version>4.4.5</httpcore.version>
 		<cxf-rt-frontend-jaxrs.version>2.7.18</cxf-rt-frontend-jaxrs.version>
 
-		<jackson-databind.version>2.8.7</jackson-databind.version>
+		<jackson-databind.version>2.9.7</jackson-databind.version>
 		<ngdbc.version>2.0.13</ngdbc.version>
 		<postgresql.version>9.4.1212</postgresql.version>
 		<commons-dbcp2.version>2.1.1</commons-dbcp2.version>

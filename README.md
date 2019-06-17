@@ -68,7 +68,7 @@ Replace the <DB instance name> with the service instance that you have created f
 
 Maven build the java application to package into a war file
 
-Go to java/ folder and execute ```mvn clean install```
+From the root folder execute ```mvn clean install```
 
 
 ```

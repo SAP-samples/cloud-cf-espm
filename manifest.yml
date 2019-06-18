@@ -7,10 +7,10 @@ applications:
   path: java/espm-cloud-web/target/espm-cloud-web.war
   env:
     CORS_DOMAIN: "cfapps.sap.hana.ondemand.com"
-    DATABASE_TYPE: "postgresql"
+    DATABASE_TYPE: "<DB name>"
   services:
-    - espm-postgres
-    - espm-uaa-refapps
+    - <DB instance name>
+    - espm-uaa
 - name: refapps-espm-ui
   host: refapps-espm-ui
   memory: 128M
@@ -23,4 +23,4 @@ applications:
         {"name":"dest", "url":"https://refapps-espm.cfapps.sap.hana.ondemand.com"}
       ]
   services:
-    - espm-uaa-refapps
+    - espm-uaa

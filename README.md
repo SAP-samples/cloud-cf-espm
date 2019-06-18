@@ -44,7 +44,7 @@ cf create-service postgresql v9.4-dev espm-postgres (PostgreSQL)
 Create service instance for the XSUAA 
 
 ```
-cf cs xsuaa default espm-uaa -c xs-security.json
+cf cs xsuaa application espm-uaa -c xs-security.json
 ```
 
 #### 3. Edit Manifest

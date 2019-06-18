@@ -79,7 +79,7 @@ Note: When running the application in internet, follow the below steps to downlo
 3. Unzip the archive to an arbitrary location on your devbox.
 4. Extract the JDBC driver (ngdbc.jar) from the archive (you will find the driver in the archive under: repository/.archive/lib/ngdbc.jar). The driver is closed source, so it is NOT available from public Maven repositories!
 5. Put the driver either to your local maven repository with:
-**mvn install:install-file -Dfile=<path-to-file> -DgroupId=com.sap.db \**
+**mvn install:install-file -Dfile=<path-to-file> -DgroupId=com.sap.db.jdbc \**
     **-DartifactId=ngdbc -Dversion=2.0.13 -Dpackaging=jar**
 
 ``` 

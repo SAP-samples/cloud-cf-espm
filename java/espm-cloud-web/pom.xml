@@ -109,13 +109,12 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
 		</dependency>
-
-		<!-- <dependency>
-			<groupId>com.sap.xs2.security</groupId>
-			<artifactId>java-container-security</artifactId>
-			<version>0.24.3</version>
-			<scope>compile</scope>
-		</dependency> -->
+		
+		<dependency>
+			<groupId>com.sap.cloud.security.xsuaa</groupId>
+			<artifactId>api</artifactId>
+			<scope>provided</scope>
+		</dependency>
 
 	</dependencies>
 

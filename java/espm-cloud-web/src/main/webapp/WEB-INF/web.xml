@@ -24,7 +24,7 @@
 		<url-pattern>/espm-cloud-web/espm.svc/*</url-pattern>
 	</servlet-mapping>
 
-	 <filter>
+	<filter>
 		<filter-name>ODataServletFilter</filter-name>
 		<filter-class>com.sap.espm.model.web.EspmServiceFactoryFilter</filter-class>
 	</filter>
@@ -32,27 +32,6 @@
 		<filter-name>ODataServletFilter</filter-name>
 		<url-pattern>/espm-cloud-web/espm.svc/*</url-pattern>
 	</filter-mapping>
-
-	<!-- <listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring-security.xml</param-value>
-	</context-param>
-	<filter>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
-
-
-
-
-
 
 	<servlet>
 		<servlet-name>ODataSecureServlet</servlet-name>
@@ -71,10 +50,39 @@
 		<servlet-name>ODataSecureServlet</servlet-name>
 		<url-pattern>/espm-cloud-web/espm.svc/secure/*</url-pattern>
 	</servlet-mapping>
-<!-- 	<resource-ref>
-		<res-ref-name>jdbc/DefaultDB</res-ref-name>
-		<res-type>javax.sql.DataSource</res-type>
-	</resource-ref> -->
+
+	<filter>
+		<filter-name>ODataSecureServletFilter</filter-name>
+		<filter-class>com.sap.espm.model.web.EspmSecureServiceFactoryFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ODataSecureServletFilter</filter-name>
+		<url-pattern>/espm-cloud-web/espm.svc/secure/*</url-pattern>
+	</filter-mapping>
+
+	<display-name>securepoint</display-name>
+	<login-config>
+		<auth-method>XSUAA</auth-method>
+	</login-config>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Protected Area</web-resource-name>
+			<url-pattern>/espm-cloud-web/espm.svc/secure/*</url-pattern>
+			<http-method>PUT</http-method>
+			<http-method>DELETE</http-method>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Create</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-role>
+		<role-name>Retailer</role-name>
+	</security-role>
+
 	<servlet>
 		<description></description>
 		<display-name>StartupServlet</display-name>
@@ -82,40 +90,5 @@
 		<servlet-class>com.sap.espm.model.web.StartupServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-<!-- 	<resource-ref>
-		<res-ref-name>connectivity/DestinationFactory</res-ref-name>
-		<res-type>com.sap.core.connectivity.api.DestinationFactory</res-type>
-	</resource-ref> -->
-	<!-- <welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list>
-	<login-config>
-		<auth-method>XSUAA</auth-method>
-	</login-config>
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>Protected Area</web-resource-name>
-			<url-pattern>/espm.svc/secure/*</url-pattern>
-			<http-method>PUT</http-method>
-			<http-method>DELETE</http-method>
-			<http-method>GET</http-method>
-			<http-method>POST</http-method>
-		</web-resource-collection>
-		<auth-constraint>
-			<role-name>Retailer</role-name>
-		</auth-constraint>
-	</security-constraint> -->
-	<!-- for ui5 -->
-<!-- 	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>Protected Area</web-resource-name>
-			<url-pattern>/retailer/*</url-pattern>
-		</web-resource-collection>
-		<auth-constraint>
-			<role-name>Retailer</role-name>
-		</auth-constraint>
-	</security-constraint>-->
-	<!-- <security-role>
-		<role-name>Retailer</role-name>
-	</security-role>  -->
+
 </web-app>

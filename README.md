@@ -145,49 +145,6 @@ To Secure the backend application, we need to bind the XSUAA service to the back
 
 ![Backend Security Diagram](/docs/images/ui-merge-backend-uaa.jpg?raw=true)
 
-[spring-security.xml](/espm-cloud-web/src/main/webapp/WEB-INF/spring-security.xml) has been implemented to intercept the url based on the specified scopes.
-
-1. Uncomment the xs2security dependency from the [java/espm-cloud-web/pom.xml](/java/espm-cloud-web/pom.xml)
-
-```
-   <dependency>
-      <groupId>com.sap.xs2.security</groupId>
-      <artifactId>java-container-security</artifactId>
-      <version>0.24.3</version>
-      <scope>compile</scope>
-   </dependency>
-```
-
-And also from [java/pom.xml](/java/pom.xml)
-
-```
-   <dependency>
-      <groupId>com.sap.xs2.security</groupId>
-      <artifactId>java-container-security</artifactId>
-      <version>0.24.3</version>
-   </dependency>
-```
-
-2. Uncomment the listener for spring security in the [web.xml](/java/espm-cloud-web/src/main/webapp/WEB-INF/web.xml) 
-
-```
-
-        <listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring-security.xml</param-value>
-	</context-param>
-	<filter>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-```
 
 # Building MTAR
 

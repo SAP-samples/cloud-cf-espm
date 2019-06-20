@@ -64,6 +64,7 @@
 		<maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
 		<maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
 		<findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
+		<cloud-security-xsuaa.version>1.1.0</cloud-security-xsuaa.version>
 	</properties>
 
 
@@ -175,11 +176,13 @@
 				<version>${commons-dbcp2.version}</version>
 			</dependency>
 
-			<!-- <dependency>
-				<groupId>com.sap.xs2.security</groupId>
-				<artifactId>java-container-security</artifactId>
-				<version>0.24.3</version>
-			</dependency> -->
+			
+			<dependency>
+				<groupId>com.sap.cloud.security.xsuaa</groupId>
+				<artifactId>api</artifactId>
+				<version>${cloud-security-xsuaa.version}</version>
+				<scope>provided</scope>
+			</dependency>
 
 			<!-- Test dependencies -->
 			<dependency>

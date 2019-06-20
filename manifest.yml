@@ -3,7 +3,7 @@ applications:
 - name: refapps-espm
   host: refapps-espm
   memory: 1G
-  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  buildpack: sap_java_buildpack
   path: java/espm-cloud-web/target/espm-cloud-web.war
   env:
     CORS_DOMAIN: "cfapps.sap.hana.ondemand.com"

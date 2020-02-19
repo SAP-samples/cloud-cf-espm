@@ -1,6 +1,6 @@
 # ESPM in Cloud Foundry
 
-The ESPM (Enterprise Sales & Procurement Model) application is a reference application which demonstrates how to build applications on SAP Cloud Platform (CF) with the Java runtime. This project mainly focuses on the migration of the [SAP Cloud Platform (NEO) application](https://github.com/SAP/cloud-espm-v2) to the SAP Cloud Platform (Cloud Foundry).
+The ESPM (Enterprise Sales & Procurement Model) application is a reference application which demonstrates how to build applications on SAP Cloud Platform (Cloud Foundry) with the Java runtime. 
 
 # Description
 

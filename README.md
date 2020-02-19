@@ -58,9 +58,6 @@ Replace the ```<DB name>``` with the Database name for which you have created th
 
 For HANA – ```hana```
 
-For PostgreSQL – ```postgresql```
-
-```<DB instance name>```
 
 Replace the <DB instance name> with the service instance that you have created for the database.
 

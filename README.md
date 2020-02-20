@@ -36,7 +36,7 @@ cf login -o <org> -s <space>
 Depending on the requirement, create a service instance for either of the database (HANA).
 
 ```
-cf create-service hana schema espm-hana (HANA)
+cf create-service hana schema espm-hana
 ```
 
 Create service instance for the XSUAA 

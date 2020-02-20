@@ -33,12 +33,10 @@ cf login -o <org> -s <space>
 
 #### 2. Create Service
 
-Depending on the requirement, create a service instance for either of the database (HANA or PostgreSQL).
+Depending on the requirement, create a service instance for either of the database (HANA).
 
 ```
 cf create-service hana schema espm-hana (HANA)
-or
-cf create-service postgresql v9.4-dev espm-postgres (PostgreSQL)
 ```
 
 Create service instance for the XSUAA 

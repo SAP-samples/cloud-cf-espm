@@ -33,13 +33,25 @@ cf login -o <org> -s <space>
 
 #### 2. Create Service
 
-Depending on the requirement, create a service instance for either of the database (HANA).
+If you are using a cf trial account then create the following services for HANA database and XSUAA using the below commands:
+
+```
+cf create-service hanatrial schema espm-hana
+``` 
+
+```
+cf cs xsuaa application espm-uaa -c xs-security.json
+```
+
+If you are using a productive account then create the required services using the below commands:
+
+```
+cf create-service hana-db 64standard espm-hana-db
+```
 
 ```
 cf create-service hana schema espm-hana
 ```
-
-Create service instance for the XSUAA 
 
 ```
 cf cs xsuaa application espm-uaa -c xs-security.json
@@ -47,17 +59,14 @@ cf cs xsuaa application espm-uaa -c xs-security.json
 
 #### 3. Edit Manifest
 
-Open the manifest.yml file and edit the following
+Open the manifest.yml file and edit the following:
 Replace <i-number> placeholders with your ```I/D/C numbers``` so that the application name and host name is unique in the CF landscape.
 
 ```DATABASE_TYPE: <DB name>```
 
-Replace the ```<DB name>``` with the Database name for which you have created the service instance
+Replace the ```<DB name>``` with ```hana``` for which you have created the service instance.
 
-For HANA – ```hana```
-
-
-Replace the <DB instance name> with the service instance that you have created for the database.
+Replace the <DB instance name> with the hana service instance that you have created above.
 
 #### 4. Build the application
 

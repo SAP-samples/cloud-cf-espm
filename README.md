@@ -17,12 +17,14 @@ For more details about the project, please refer to https://github.com/SAP/cloud
 - [CF CLI](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4ef907afb1254e8286882a2bdef0edf4.html)
 - If you do not yet have a Cloud Foundry environment trial or enterprise account, signup for a Cloud Foundry environment trial account by following the [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76e79d62fa0149d5aa7b0698c9a33687.html)
 - To deploy the MTAR we need the MTA CF CLI plugin, download the MTA CF CLI Plugin from [here](https://tools.hana.ondemand.com/#cloud)
+- To build the multi target application, we need the [Cloud MTA Build tool](https://sap.github.io/cloud-mta-build-tool/), download the tool from [here](https://sap.github.io/cloud-mta-build-tool/download/)
+- For Windows system, install 'MAKE' from [here](https://sap.github.io/cloud-mta-build-tool/makefile/)
 
 # Download and Installation
 
 ### Running the application
 
-**Note:** If you wish to deploy the application using MTAR, then directly skip to the section [Building MTAR](#building-mtar)
+**Note:** If you wish to deploy the application using MTA Build tool, then directly skip to the section [Building MTAR using MBT](#building-mtar using mbt)
 
 #### 1. Login to Cloud Foundry
 
@@ -33,7 +35,7 @@ cf login -o <org> -s <space>
 
 #### 2. Create Service
 
-If you are using a cf trial account then create the following services for HANA database and XSUAA using the below commands:
+If you are using a cf trial account then create the following services for HANA and XSUAA using the below commands respectively:
 
 ```
 cf create-service hanatrial schema espm-hana
@@ -43,15 +45,30 @@ cf create-service hanatrial schema espm-hana
 cf cs xsuaa application espm-uaa -c xs-security.json
 ```
 
-If you are using a productive account then create the required services using the below commands:
+If you are using a productive account then create the required services as mentioned below:
 
-```
-cf create-service hana-db 64standard espm-hana-db
-```
+Create SAP HANA Service instance with plan schema using the below command:
 
 ```
 cf create-service hana schema espm-hana
 ```
+Create SAP HANA Service instance with plan 64standard as described [here](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html)
+
+> If there are multiple instances of SAP HANA Service in the space where you plan to deploy this application, please modify the  mta.yaml as shown below. Replace <database_guid> with the [id of the databse](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/93cdbb1bd50d49fe872e7b648a4d9677.html?q=guid) you would like to bind the application with :
+ ```
+ # Hana HDI Container
+  - name: cloud-cap-xf-sf-db-hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+      config:
+        database_id: <database_guid>
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+```
+
+Create SAP XSUAA Service instance with plan application using the below command:
 
 ```
 cf cs xsuaa application espm-uaa -c xs-security.json
@@ -150,17 +167,17 @@ To Secure the backend application, we need to bind the XSUAA service to the back
 ![Backend Security Diagram](/docs/images/ui-merge-backend-uaa.jpg?raw=true)
 
 
-# Building MTAR
+# Building MTAR using MBT
 
-In your CLI in the ESPM-CF project root folder run the command: 
+Install MBT: `npm install -g mbt`
 
-	java -jar mta.jar --build-target=CF --mtar=espm-cf.mtar build
+Build the application: `mbt build -p=cf`
 	
 # Deploy MTAR
 
-To Deploy MTAR, run the command:
+To Deploy the application navigate to mta_archives folder under your project root folder and run the below command from CLI
 
-	cf deploy espm-cf.mtar
+	`cf deploy ESPM_MTA_1.0.0.mtar`
 
 In case if MTA Plugin is missing, you can download from https://tools.hana.ondemand.com/#cloud
 

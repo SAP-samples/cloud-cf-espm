@@ -35,37 +35,38 @@ cf login -o <org> -s <space>
 
 #### 2. Create Service
 
-If you are using a cf trial account then create the following services for HANA and XSUAA using the below commands respectively:
-
-```
-cf create-service hanatrial schema espm-hana
-``` 
+Create XSUAA service using the below command:
 
 ```
 cf cs xsuaa application espm-uaa -c xs-security.json
 ```
 
-If you are using a productive account then create the required services as mentioned below:
+If you are using a SAP Cloud Platfrom Cloudfoundry trial account then create the  HANA service following the below command
+```
+cf create-service hanatrial schema espm-hana
+``` 
 
-Create SAP HANA Service instance with plan schema using the below command:
+
+If you are using a productive SAP Cloud Platfrom Cloudfoundry account then create the required services as mentioned below:
+
+1. Create SAP HANA service instance with plan 64standard as described [here](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html)
+
+2. Create schema in SAP HANA Service instance by creating an instance of the SAP HANA service broker by running the below command:
 
 ```
 cf create-service hana schema espm-hana
 ```
-Create SAP HANA Service instance with plan 64standard as described [here](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html)
 
 > If there are multiple instances of SAP HANA Service in the space where you plan to deploy this application, please modify the  mta.yaml as shown below. Replace <database_guid> with the [id of the databse](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/93cdbb1bd50d49fe872e7b648a4d9677.html?q=guid) you would like to bind the application with :
  ```
  # Hana HDI Container
-  - name: cloud-cap-xf-sf-db-hdi-container
+  - name: espm-hana
     parameters:
       service: hana
-      service-plan: hdi-shared
+      service-plan: schema
       config:
         database_id: <database_guid>
-    properties:
-      hdi-container-name: '${service-name}'
-    type: com.sap.xs.hdi-container
+    type: com.sap.xs.hana-schema
 ```
 
 Create SAP XSUAA Service instance with plan application using the below command:

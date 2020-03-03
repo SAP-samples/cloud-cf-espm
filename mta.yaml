@@ -59,8 +59,8 @@ resources:
       service: xsuaa
       service-plan: application
       path: xs-security.json
-  - name: espm-postgres
-    type: postgresql
+  - name: espm-hana
+    type: com.sap.xs.hana-schema
     parameters:
-      service: postgresql
-      service-plan: "v9.4-dev"
+      service: hanatrial
+      service-plan: schema

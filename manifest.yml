@@ -9,7 +9,7 @@ applications:
     CORS_DOMAIN: "cfapps.sap.hana.ondemand.com"
     DATABASE_TYPE: "<DB name>"
   services:
-    - <DB instance name>
+    - espm-hana
     - espm-uaa
 - name: refapps-espm-ui
   host: refapps-espm-ui

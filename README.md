@@ -59,7 +59,7 @@ cf create-service hana schema espm-hana
 
 > If there are multiple instances of SAP HANA Service in the space where you plan to deploy this application, please modify the  mta.yaml as shown below. Replace <database_guid> with the [id of the databse](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/93cdbb1bd50d49fe872e7b648a4d9677.html?q=guid) you would like to bind the application with :
  ```
- # Hana HDI Container
+ # Hana Schema
   - name: espm-hana
     parameters:
       service: hana
@@ -169,18 +169,20 @@ To Secure the backend application, we need to bind the XSUAA service to the back
 
 
 # Building MTAR using MBT
+The ESPM application can be packaged as a [Multi Target Application](https://www.sap.com/documents/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.html) which makes it easier to deploy the application. MTA application needs a [MTA Development descriptor](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/4486ada1af824aadaf56baebc93d0256.html)(mta.yml) which is used to define the elements and dependencies of multi-target application. 
+Building an MTA project would give a binary called as mtar. MTA project can be built using [MTA Build tool](https://sap.github.io/cloud-mta-build-tool/)(MBT)
 
-Install MBT: `npm install -g mbt`
+To install MBT, run npm command: `npm install -g mbt`
 
-Build the application: `mbt build -p=cf`
+Build the application by running following command from root folder of the project: `mbt build -p=cf`
 	
 # Deploy MTAR
+Download and install CF MTA Plugin from https://tools.hana.ondemand.com/#cloud
 
 To Deploy the application navigate to mta_archives folder under your project root folder and run the below command from CLI
 
 	`cf deploy ESPM_MTA_1.0.0.mtar`
 
-In case if MTA Plugin is missing, you can download from https://tools.hana.ondemand.com/#cloud
 
 # How to Obtain Support
 

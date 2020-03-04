@@ -17,8 +17,13 @@ For more details about the project, please refer to https://github.com/SAP/cloud
 - [CF CLI](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4ef907afb1254e8286882a2bdef0edf4.html)
 - If you do not yet have a Cloud Foundry environment trial or enterprise account, signup for a Cloud Foundry environment trial account by following the [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76e79d62fa0149d5aa7b0698c9a33687.html)
 - To deploy the MTAR we need the MTA CF CLI plugin, download the MTA CF CLI Plugin from [here](https://tools.hana.ondemand.com/#cloud)
-- To build the multi target application, we need the [Cloud MTA Build tool](https://sap.github.io/cloud-mta-build-tool/), download the tool from [here](https://sap.github.io/cloud-mta-build-tool/download/)
-- For Windows system, install 'MAKE' from [here](https://sap.github.io/cloud-mta-build-tool/makefile/)
+- To build the multi target application, we need the [Cloud MTA Build tool](https://sap.github.io/cloud-mta-build-tool/), download the tool from [here](https://sap.github.io/cloud-mta-build-tool/download/).
+	- For Windows system, install 'MAKE' from [here](https://sap.github.io/cloud-mta-build-tool/makefile/)
+	- Simplest way to install would be by running the command
+		```
+		npm install -g mbt
+		```
+
 
 # Download and Installation
 
@@ -35,29 +40,31 @@ cf login -o <org> -s <space>
 
 #### 2. Create Service
 
-Create XSUAA service using the below command:
+ESPM application requires 2 backing services XSUAA  and HANA
+
+1. Create XSUAA service using the below command:
 
 ```
 cf cs xsuaa application espm-uaa -c xs-security.json
 ```
 
-If you are using a SAP Cloud Platfrom Cloudfoundry trial account then create the  HANA service following the below command
+2. If you are using a SAP Cloud Platfrom Cloudfoundry trial account then create the  HANA service following the below command
 ```
 cf create-service hanatrial schema espm-hana
 ``` 
 
+If you are using a productive SAP Cloud Platfrom Cloudfoundry account then create the required HANA services as mentioned below:
 
-If you are using a productive SAP Cloud Platfrom Cloudfoundry account then create the required services as mentioned below:
+	1. Create SAP HANA service instance with plan 64standard as described [here](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html)
 
-1. Create SAP HANA service instance with plan 64standard as described [here](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html)
-
-2. Create schema in SAP HANA Service instance by creating an instance of the SAP HANA service broker by running the below command:
+	2. Create schema in SAP HANA Service instance(created in previous step) by creating an instance of the SAP HANA service broker by running the below command:
 
 ```
 cf create-service hana schema espm-hana
 ```
 
 > If there are multiple instances of SAP HANA Service in the space where you plan to deploy this application, please modify the  mta.yaml as shown below. Replace <database_guid> with the [id of the databse](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/93cdbb1bd50d49fe872e7b648a4d9677.html?q=guid) you would like to bind the application with :
+
  ```
  # Hana Schema
   - name: espm-hana
@@ -69,11 +76,6 @@ cf create-service hana schema espm-hana
     type: com.sap.xs.hana-schema
 ```
 
-Create SAP XSUAA Service instance with plan application using the below command:
-
-```
-cf cs xsuaa application espm-uaa -c xs-security.json
-```
 
 #### 3. Edit Manifest
 
@@ -170,14 +172,11 @@ To Secure the backend application, we need to bind the XSUAA service to the back
 
 # Building MTAR using MBT
 The ESPM application can be packaged as a [Multi Target Application](https://www.sap.com/documents/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.html) which makes it easier to deploy the application. MTA application needs a [MTA Development descriptor](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/4486ada1af824aadaf56baebc93d0256.html)(mta.yml) which is used to define the elements and dependencies of multi-target application. 
-Building an MTA project would give a binary called as mtar. MTA project can be built using [MTA Build tool](https://sap.github.io/cloud-mta-build-tool/)(MBT)
-
-To install MBT, run npm command: `npm install -g mbt`
 
 Build the application by running following command from root folder of the project: `mbt build -p=cf`
 	
 # Deploy MTAR
-Download and install CF MTA Plugin from https://tools.hana.ondemand.com/#cloud
+If CF MTA Plugin is not installed, intall if  from [here](https://tools.hana.ondemand.com/#cloud)
 
 To Deploy the application navigate to mta_archives folder under your project root folder and run the below command from CLI
 

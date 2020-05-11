@@ -10,8 +10,6 @@ modules:
       builder: maven
       build-result: "espm-cloud-web/target/espm-cloud-web.war"
       timeout: 60m
-      maven-opts:
-        command: [ clean, install ]
       buildpack: https://github.com/cloudfoundry/java-buildpack.git
     properties:
       TARGET_RUNTIME: tomcat
@@ -62,5 +60,5 @@ resources:
   - name: espm-hana
     type: com.sap.xs.hana-schema
     parameters:
-      service: hanatrial
+      service: hana
       service-plan: schema

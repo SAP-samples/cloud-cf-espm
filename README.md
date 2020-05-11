@@ -47,6 +47,7 @@ ESPM application requires 2 backing services XSUAA  and HANA
 ```
 cf cs xsuaa application espm-uaa -c xs-security.json
 ```
+> *Note:* Make sure the application name used in the xs-security.json is unique.
 
 2. If you are using a SAP Cloud Platfrom Cloudfoundry trial account then create the  HANA service following the below command
 ```

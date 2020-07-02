@@ -5,8 +5,8 @@ The ESPM (Enterprise Sales & Procurement Model) application is a reference appli
 # Description
 
 ESPM application has 2 underlying applications
-- webshop: this application is a webshopping app, which does have any authentication
-- retailer: this application is used by a retailer to manage stocks, approve/reject sales orders. We use authentication here
+- webshop: this application is a webshopping app, which does not have any authentication.
+- retailer: this application is used by a retailer to manage stocks, approve/reject sales orders. We use authentication here.
 
 For more details about the project, please refer to https://github.com/SAP/cloud-espm-v2 
 

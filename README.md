@@ -56,9 +56,9 @@ cf create-service hanatrial schema espm-hana
 
 If you are using a productive SAP Cloud Platfrom Cloudfoundry account then create the required HANA services as mentioned below:
 
-	1. Create SAP HANA service instance with plan 64standard as described here : https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html
+2.1 Create SAP HANA service instance with plan 64standard as described here : https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html
 
-	2. Create schema in SAP HANA Service instance(created in previous step) by creating an instance of the SAP HANA service broker by running the below command:
+2.2 Create schema in SAP HANA Service instance(created in previous step) by creating an instance of the SAP HANA service broker by running the below command:
 
 ```
 cf create-service hana schema espm-hana
@@ -75,7 +75,9 @@ cf create-service hana schema espm-hana
       config:
         database_id: <database_guid>
     type: com.sap.xs.hana-schema
-```
+```    
+
+2.3 If you are using Hana, set the target database as Hana by [uncommenting the same in persistence.xml file](https://github.com/SAP-samples/cloud-cf-espm/blob/master/java/espm-cloud-jpa/src/main/resources/META-INF/persistence.xml#L10). 
 
 
 #### 3. Edit Manifest

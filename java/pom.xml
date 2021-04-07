@@ -27,7 +27,7 @@
 			8080 --https-proxy-host proxy --https-proxy-port 8080</local.server.proxy.settings>
 		<browser.proxy.settings>-Dhttp.proxyHost=proxy -Dhttp.proxyPort=8080
 			-Dhttps.proxyHost=proxy -Dhttps.proxyPort=8080</browser.proxy.settings>
-		<sap.cloud.sdk.version>3.20.3.1</sap.cloud.sdk.version>
+		<sap.cloud.sdk.version>3.125.9</sap.cloud.sdk.version>
 		<sap.cloud.sdk.path>${project.build.directory}/install</sap.cloud.sdk.path>
 		<!-- Property that holds the source path to the backend destinations -->
 		<destinations.path>${basedir}/../destinations</destinations.path>
@@ -36,21 +36,21 @@
 		<local.server.http.port>8080</local.server.http.port>
 		<local.server.https.port>8443</local.server.https.port>
 		<local.server.ajp.port>8009</local.server.ajp.port>
-		<olingo.version>2.0.7</olingo.version>
-		<slf4j.version>1.7.12</slf4j.version>
-		<junit.version>4.13.1</junit.version>
-		<derby.version>10.9.1.0</derby.version>
-		<eclipselink.version>2.6.4</eclipselink.version>
-		<javax.servlet-api.version>3.0.1</javax.servlet-api.version>
-		<httpclient.version>4.5.2</httpclient.version>
-		<httpcore.version>4.4.5</httpcore.version>
-		<cxf-rt-frontend-jaxrs.version>2.7.18</cxf-rt-frontend-jaxrs.version>
+		<olingo.version>2.0.11</olingo.version>
+		<slf4j.version>1.7.30</slf4j.version>
+		<junit.version>4.13.2</junit.version>
+		<derby.version>10.14.2.0</derby.version>
+		<eclipselink.version>2.7.8</eclipselink.version>
+		<javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+		<httpclient.version>4.5.13</httpclient.version>
+		<httpcore.version>4.4.14</httpcore.version>
+		<cxf-rt-frontend-jaxrs.version>3.2.14</cxf-rt-frontend-jaxrs.version>
 
-		<jackson-databind.version>[2.9.9,)</jackson-databind.version>
-		<ngdbc.version>2.0.13</ngdbc.version>
-		<postgresql.version>9.4.1212</postgresql.version>
-		<commons-dbcp2.version>2.1.1</commons-dbcp2.version>
-		<jettison.version>1.3.2</jettison.version>
+		<jackson-databind.version>2.12.2</jackson-databind.version>
+		<ngdbc.version>2.7.15</ngdbc.version>
+		<postgresql.version>42.2.19</postgresql.version>
+		<commons-dbcp2.version>2.8.0</commons-dbcp2.version>
+		<jettison.version>1.4.1</jettison.version>
 		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
 		<maven-war-plugin.version>3.0.0</maven-war-plugin.version>
 		<maven-dependency-plugin.version>3.0.0</maven-dependency-plugin.version>
@@ -64,7 +64,7 @@
 		<maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
 		<maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
 		<findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
-		<cloud-security-xsuaa.version>1.1.0</cloud-security-xsuaa.version>
+		<cloud-security-xsuaa.version>2.8.8</cloud-security-xsuaa.version>
 	</properties>
 
 

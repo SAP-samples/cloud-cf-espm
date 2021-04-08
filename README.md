@@ -58,15 +58,15 @@ cf create-service hanatrial schema espm-hana
 
 If you are using a productive SAP Cloud Platfrom Cloudfoundry account then create the required HANA services as mentioned below:
 
-2.1 Create SAP HANA service instance with plan 64standard as described here : https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html
+2.1 Create SAP HANA Cloud service instance with plan hana as described here : https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/784a1dbb421a4da29fb1e3bdf5f198ec.html
 
-2.2 Create schema in SAP HANA Service instance(created in previous step) by creating an instance of the SAP HANA service broker by running the below command:
+2.2 Create schema in SAP HANA Cloud Service instance(created in previous step) by creating an instance of the SAP HANA service broker by running the below command:
 
 ```
 cf create-service hana schema espm-hana
 ```
 
-> If there are multiple instances of SAP HANA Service in the space where you plan to deploy this application, please modify the  mta.yaml as shown below. Replace <database_guid> with the [id of the databse](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/93cdbb1bd50d49fe872e7b648a4d9677.html?q=guid) you would like to bind the application with :
+> If there are multiple instances of SAP HANA Cloud Service in the space where you plan to deploy this application, please modify the  mta.yaml as shown below. Replace <database_guid> with the [id of the databse](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/93cdbb1bd50d49fe872e7b648a4d9677.html?q=guid) you would like to bind the application with :
 
  ```
  # Hana Schema

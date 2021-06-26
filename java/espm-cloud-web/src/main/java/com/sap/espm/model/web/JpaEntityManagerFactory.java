@@ -72,7 +72,7 @@ public class JpaEntityManagerFactory {
 		    JsonNode credentials;
 		    credentials = readCredentialsFromEnvironment();
 			//ds.setDriverClassName(credentials.get("driver").asText());
-		     if(dbName.equals("postgresql")){
+		     if(dbName.equals("postgresql-db")){
 		    ds.setDriverClassName("org.postgresql.Driver");
 		    ds.setUrl(buildJdbcUrl(credentials));
 		    ds.setUsername(credentials.get("username").asText());
@@ -98,7 +98,7 @@ public class JpaEntityManagerFactory {
    
 
 	public static String buildJdbcUrl(JsonNode credentials) {
-		return String.format("%s%s://%s:%s/%s?user=%s&password=%s",
+		return String.format("%s%s://%s:%s/%s?user=%s&password=%s&sslmode=require",
 	            "jdbc:", "postgresql", credentials.get("hostname").asText(),
 				credentials.get("port").asText(), credentials.get("dbname").asText(), credentials.get("username").asText(),credentials.get("password").asText());
 	}

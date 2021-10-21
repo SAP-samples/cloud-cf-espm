@@ -17,7 +17,7 @@ For more details about the project, please refer to https://github.com/SAP/cloud
 - [Java8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [Maven](https://maven.apache.org/download.cgi)
 - [CF CLI](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4ef907afb1254e8286882a2bdef0edf4.html)
-- If you do not yet have a Cloud Foundry environment trial or enterprise account, signup for a Cloud Foundry environment trial account by following the [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76e79d62fa0149d5aa7b0698c9a33687.html)
+- If you do not yet have a Cloud Foundry environment trial or enterprise account, signup for a Cloud Foundry environment trial account by following the [documentation](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 - To deploy the MTAR we need the MTA CF CLI plugin, download the MTA CF CLI Plugin from [here](https://tools.hana.ondemand.com/#cloud)
 - To build the multi target application, we need the [Cloud MTA Build tool](https://sap.github.io/cloud-mta-build-tool/), download the tool from [here](https://sap.github.io/cloud-mta-build-tool/download/).
 	- For Windows system, install 'MAKE' from [here](https://sap.github.io/cloud-mta-build-tool/makefile/)
@@ -51,12 +51,12 @@ cf cs xsuaa application espm-uaa -c xs-security.json
 ```
 > *Note:* Make sure the application name used in the xs-security.json is unique.
 
-2. If you are using a SAP Cloud Platfrom Cloudfoundry trial account then create the  HANA service following the below command
+2. If you are using a SAP Business Technology Platform (BTP) Cloudfoundry trial account then create the  HANA service following the below command
 ```
 cf create-service hanatrial schema espm-hana
 ``` 
 
-If you are using a productive SAP Cloud Platfrom Cloudfoundry account then create the required HANA services as mentioned below:
+If you are using a productive SAP BTP Cloudfoundry account then create the required HANA services as mentioned below:
 
 2.1 Create SAP HANA Cloud service instance with plan hana as described here : https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/784a1dbb421a4da29fb1e3bdf5f198ec.html
 

@@ -37,6 +37,7 @@ public class StartupServlet extends HttpServlet {
 	public void init() throws ServletException {
 		try {
 			System.out.println("Init Method Called");
+			LOGGER.info("***********************init() method called*********************");
 			emf = JpaEntityManagerFactory.getEntityManagerFactory();
 			DataLoader loader = new DataLoader(emf);
 			loader.loadData();

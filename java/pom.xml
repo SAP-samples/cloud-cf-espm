@@ -48,7 +48,7 @@
 
 		<jackson-databind.version>2.12.2</jackson-databind.version>
 		<ngdbc.version>2.7.15</ngdbc.version>
-		<postgresql.version>42.2.19</postgresql.version>
+		<postgresql.version>42.2.25</postgresql.version>
 		<commons-dbcp2.version>2.8.0</commons-dbcp2.version>
 		<jettison.version>1.4.1</jettison.version>
 		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>

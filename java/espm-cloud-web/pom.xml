@@ -17,12 +17,6 @@
 			<artifactId>espm-cloud-jpa</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<!-- SAP HANA Cloud SDK dependencies -->
-		<dependency>
-			<groupId>com.sap.cloud</groupId>
-			<artifactId>neo-java-web-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>

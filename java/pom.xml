@@ -87,13 +87,6 @@
 				<artifactId>eclipselink</artifactId>
 				<version>${eclipselink.version}</version>
 			</dependency>
-			<!-- SAP HANA Cloud SDK dependencies -->
-			<dependency>
-				<groupId>com.sap.cloud</groupId>
-				<artifactId>neo-java-web-api</artifactId>
-				<version>${sap.cloud.sdk.version}</version>
-				<scope>provided</scope>
-			</dependency>
 			<!-- JEE Dependencies -->
 			<dependency>
 				<groupId>javax.servlet</groupId>

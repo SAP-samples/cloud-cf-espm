@@ -155,6 +155,12 @@ We need to assign the role which we have created in the previous step to the use
  - Enter username/email and click on the add Assignment button.
 
  - Select the Role as "Retailer" to assign it to the user.
+	
+#### 9. Accessing the application
+	
+To access the webshop page launch the given URL : `https://<your-application-ui-route>/webshop/index.html`
+
+To access the retailer page launch the given URL : `https://<your-application-ui-route>/retailer/index.html`
 
 # Security Implementation
 

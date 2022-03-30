@@ -88,6 +88,10 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.sap.db.jdbc</groupId>
+			<artifactId>ngdbc</artifactId>
+		</dependency>
+		<dependency>
 		<groupId>org.postgresql</groupId>
 		<artifactId>postgresql</artifactId>
 		</dependency>

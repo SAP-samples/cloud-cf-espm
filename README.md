@@ -101,16 +101,7 @@ From the root folder execute ```mvn clean install```
 
 
 ```
-Note: When running the application in internet, follow the below steps to download the ngdbc driver to your local ~.m2 repository, as its not available in central maven
-
-1. You need to download the SAP BTP SDK from here: https://tools.hana.ondemand.com/#cloud
-2. Take the latest "Java Web Tomcat 8" from the download section (a package starting with neo-).
-3. Unzip the archive to an arbitrary location on your devbox.
-4. Extract the JDBC driver (ngdbc.jar) from the archive (you will find the driver in the archive under: repository/.archive/lib/ngdbc.jar). The driver is closed source, so it is NOT available from public Maven repositories!
-5. Put the driver either to your local maven repository with:
-**mvn install:install-file -Dfile=<path-to-file> -DgroupId=com.sap.db.jdbc \**
-    **-DartifactId=ngdbc -Dversion=2.0.13 -Dpackaging=jar**
-
+Note: Its no longer required to manually setup ngdbc since the following artifact is available in maven central and also the sap_java_buildpack provides the hana jdbc driver out-of-the-box.
 ``` 
 
 #### 5. Install Dependencies

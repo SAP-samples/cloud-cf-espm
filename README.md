@@ -43,6 +43,7 @@ cf login -o <org> -s <space>
 #### 2. Create Service
 
 ESPM application requires 2 backing services XSUAA  and HANA
+Depending on the requirement, create a service instance for either of the database (HANA or PostgreSQL-db).
 
 1. Create XSUAA service using the below command:
 
@@ -85,13 +86,11 @@ cf create-service hana schema espm-hana
 #### 3. Edit Manifest
 
 Open the manifest.yml file and edit the following:
-Replace <i-number> placeholders with your ```I/D/C numbers``` so that the application name and host name is unique in the CF landscape.
 
-```DATABASE_TYPE: <DB name>```
+```DATABASE_TYPE: <DB type>```
 
-Replace the ```<DB name>``` with ```hana``` for which you have created the service instance.
+For HANA – hana
 
-Replace the <DB instance name> with the hana service instance that you have created above.
 
 #### 4. Build the application
 
@@ -106,9 +105,9 @@ Note: Its no longer required to manually setup ngdbc since the following artifac
 
 #### 5. Install Dependencies
 
-Go to web/retailer and execute ```npm install```
+Go to web/resources/retailer and execute ```npm install```
 
-Go to web/webshop and execute ```npm install```
+Go to web/resources/retailer and execute ```npm install```
 
 Make sure you have npm registry = "https://npm.sap.com/"
 
@@ -182,7 +181,17 @@ If CF MTA Plugin is not installed, intall if  from [here](https://tools.hana.ond
 
 To Deploy the application navigate to mta_archives folder under your project root folder and run the below command from CLI
 
-	`cf deploy ESPM_MTA_1.0.0.mtar`
+	cf deploy ESPM_MTA_1.0.0.mtar
+
+# Accessing the application
+	
+To access the webshop page launch the given URL : `https://<your-application-ui-route>/webshop/index.html`
+
+To access the retailer page launch the given URL : `https://<your-application-ui-route>/retailer/index.html`
+
+### Demo script for [ESPM Webshop](/docs/demoscript/WebshopREADME.md) 
+### Demo script for [ESPM Retailer-SalesorderApproval](/docs/demoscript/Retailer_SalesOrderApprovalREADME.md)
+### Demo script for [ESPM Retailer-StockUpdate](/docs/demoscript/Retailer_StockUpdateREADME.md)
 
 
 # How to Obtain Support

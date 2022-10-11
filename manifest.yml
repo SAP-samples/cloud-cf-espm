@@ -7,7 +7,7 @@ applications:
   path: java/espm-cloud-web/target/espm-cloud-web.war
   env:
     CORS_DOMAIN: "cfapps.sap.hana.ondemand.com"
-    DATABASE_TYPE: "<DB name>"
+    DATABASE_TYPE: "<DB type>"
   services:
     - espm-hana
     - espm-uaa

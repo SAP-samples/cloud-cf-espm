@@ -107,7 +107,7 @@ Note: Its no longer required to manually setup ngdbc since the following artifac
 
 Go to web/resources/retailer and execute ```npm install```
 
-Go to web/resources/retailer and execute ```npm install```
+Go to web/resources/webshop and execute ```npm install```
 
 Make sure you have npm registry = "https://npm.sap.com/"
 

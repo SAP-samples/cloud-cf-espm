@@ -148,7 +148,7 @@
 				<version>${jackson-databind.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.sap.db.jdbc</groupId>
+				<groupId>com.sap.cloud.db.jdbc</groupId>
 				<artifactId>ngdbc</artifactId>
 				<version>${ngdbc.version}</version>
 			</dependency>

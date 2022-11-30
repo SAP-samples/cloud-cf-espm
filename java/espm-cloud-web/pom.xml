@@ -88,7 +88,7 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.sap.db.jdbc</groupId>
+			<groupId>com.sap.cloud.db.jdbc</groupId>
 			<artifactId>ngdbc</artifactId>
 		</dependency>
 		<dependency>

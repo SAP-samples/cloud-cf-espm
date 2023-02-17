@@ -42,8 +42,7 @@ cf login -o <org> -s <space>
 
 #### 2. Create Service
 
-ESPM application requires 2 backing services XSUAA  and HANA
-Depending on the requirement, create a service instance for either of the database (HANA or PostgreSQL-db).
+ESPM application requires 2 backing services XSUAA  and HANA.
 
 1. Create XSUAA service using the below command:
 

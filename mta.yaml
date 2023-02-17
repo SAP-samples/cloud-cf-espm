@@ -15,7 +15,6 @@ modules:
       TARGET_RUNTIME: tomcat
       SAP_JWT_TRUST_ACL: "[{\"clientid\":\"*\",\"identityzone\":\"*\"}]"
       DATABASE_TYPE: "hana"
-      #DATABASE_TYPE: "postgresql-db"
     provides:
       - name: backend
         properties:
@@ -64,9 +63,3 @@ resources:
       service: hana
       service-plan: schema
       
-#To bind with postgres-db 
-  #- name: espm-postgres-db
-    #type: org.cloudfoundry.managed-service
-    #parameters:
-      #service: postgresql-db
-      #service-plan: development

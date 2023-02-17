@@ -9,9 +9,6 @@ Licensed under Eclipse Distribution License - v 1.0 - http://www.eclipse.org/org
 Commons DBCP (https://commons.apache.org/proper/commons-dbcp/)
 Licensed under Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0
 
-PostgreSQL JDBC Driver (https://jdbc.postgresql.org/)
-Licensed under BSD 2-Clause "Simplified" License - https://github.com/pgjdbc/pgjdbc/blob/master/LICENSE
-
 Apache HTTP Components (https://hc.apache.org/)
 Licensed under Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0
 

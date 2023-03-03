@@ -72,18 +72,11 @@ public class JpaEntityManagerFactory {
 		    JsonNode credentials;
 		    credentials = readCredentialsFromEnvironment();
 			//ds.setDriverClassName(credentials.get("driver").asText());
-		     if(dbName.equals("postgresql-db")){
-		    ds.setDriverClassName("org.postgresql.Driver");
-		    ds.setUrl(buildJdbcUrl(credentials));
-		    ds.setUsername(credentials.get("username").asText());
-		    }
-		    else{
-		    	ds.setDriverClassName(credentials.get("driver").asText());
-		    	ds.setUrl(credentials.get("url").asText());
-		    	ds.setUsername(credentials.get("user").asText());
-		    }
-		   
-		   
+		    
+		    ds.setDriverClassName(credentials.get("driver").asText());
+		    ds.setUrl(credentials.get("url").asText());
+		    ds.setUsername(credentials.get("user").asText());
+		    
 		    ds.setPassword(credentials.get("password").asText());
 			//DataSource ds = (DataSource) ctx.lookup(DATA_SOURCE_NAME);
 		    System.out.println("ds:"+ds.getUsername());
@@ -96,15 +89,5 @@ public class JpaEntityManagerFactory {
 		return entityManagerFactory;
 	}
    
-
-	public static String buildJdbcUrl(JsonNode credentials) {
-		return String.format("%s%s://%s:%s/%s?user=%s&password=%s&sslmode=require",
-	            "jdbc:", "postgresql", credentials.get("hostname").asText(),
-				credentials.get("port").asText(), credentials.get("dbname").asText(), credentials.get("username").asText(),credentials.get("password").asText());
-	}
-	
-  
-//jdbc:postgresql://10.11.12.232,10.11.12.233/2e8aa57ff2be14b2ed9fc561285b74ce?targetServerType=master
-
 }
 

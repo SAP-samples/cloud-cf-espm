@@ -56,7 +56,8 @@ cf login -o <org> -s <space>
 
 ESPM application requires 2 backing services XSUAA  and HANA.
 1. Create XSUAA service using the below command: 
-- Note : To avoid redirect uri issues after deployement ,please update xs-security.json file with required changes ex :
+To avoid redirect uri issues after deployement ,please update xs-security.json file with required changes
+ ex :
 ```
 "oauth2-configuration": {
         "redirect-uris": [

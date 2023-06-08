@@ -56,8 +56,11 @@ cf login -o <org> -s <space>
 
 ESPM application requires 2 backing services XSUAA  and HANA.
 1. Create XSUAA service using the below command: 
-To avoid redirect uri issues after deployement ,please update xs-security.json file with required changes
- ex :
+```
+cf cs xsuaa application espm-uaa -c xs-security.json
+```
+> *Note:*  To avoid redirect uri issues after deployement ,please update xs-security.json file with required changes
+  ex :
 ```
 "oauth2-configuration": {
         "redirect-uris": [
@@ -68,9 +71,7 @@ To avoid redirect uri issues after deployement ,please update xs-security.json f
 	
 ```
 
-```
-cf cs xsuaa application espm-uaa -c xs-security.json
-```
+
 > *Note:* Make sure the application name used in the xs-security.json is unique.
 
 2. If you are using a SAP Business Technology Platform (BTP) Cloudfoundry trial account then create the  HANA service following the below command

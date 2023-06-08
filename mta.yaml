@@ -10,11 +10,12 @@ modules:
       builder: maven
       build-result: "espm-cloud-web/target/espm-cloud-web.war"
       timeout: 60m
-      buildpack: sap_java_buildpack
     properties:
       TARGET_RUNTIME: tomcat
       SAP_JWT_TRUST_ACL: "[{\"clientid\":\"*\",\"identityzone\":\"*\"}]"
       DATABASE_TYPE: "hana"
+      JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+      JBP_CONFIG_SAP_MACHINE_JRE: '{ jre: { version: "11.+" } }'
     provides:
       - name: backend
         properties:
@@ -27,6 +28,7 @@ modules:
       - name: espm-hana
     parameters:
       memory: 1G
+      buildpack: sap_java_buildpack
   - name: espm-ui
     type: html5
     path: web

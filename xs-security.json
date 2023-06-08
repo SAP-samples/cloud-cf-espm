@@ -28,5 +28,15 @@
                                                    ]                                            
                         }                                     
                         
+                      ],
+                      "role-collections": [
+                          {
+                              "name": "Retailer-RoleCollection",
+                              "description": "retailer roles for cloud cf espm ",
+                              "role-template-references": [
+                                "$XSAPPNAME.Retailer"
+                              ]
+                          }
                       ]
+                    
 }

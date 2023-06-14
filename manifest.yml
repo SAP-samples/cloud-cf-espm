@@ -6,8 +6,10 @@ applications:
   buildpack: sap_java_buildpack
   path: java/espm-cloud-web/target/espm-cloud-web.war
   env:
-    CORS_DOMAIN: "cfapps.sap.hana.ondemand.com"
-    DATABASE_TYPE: "<DB type>"
+    CORS_DOMAIN: "<your_domain>"
+    DATABASE_TYPE: "hana"
+    JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+    JBP_CONFIG_SAP_MACHINE_JRE: '{ jre: { version: "11.+" } }'
   services:
     - espm-hana
     - espm-uaa
@@ -16,11 +18,11 @@ applications:
   memory: 128M
   path: web
   env:
-    TENANT_HOST_PATTERN: "^(.*).cfapps.sap.hana.ondemand.com"
+    TENANT_HOST_PATTERN: "^(.*).<your_domain>"
     destinations: >
       [
-        {"name":"securedest", "url":"https://refapps-espm.cfapps.sap.hana.ondemand.com", "forwardAuthToken": true },
-        {"name":"dest", "url":"https://refapps-espm.cfapps.sap.hana.ondemand.com"}
+        {"name":"securedest", "url":"https://refapps-espm.<your_domain>", "forwardAuthToken": true },
+        {"name":"dest", "url":"https://refapps-espm.<your_domain>"}
       ]
   services:
     - espm-uaa

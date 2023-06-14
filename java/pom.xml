@@ -46,10 +46,10 @@
 		<httpcore.version>4.4.14</httpcore.version>
 		<cxf-rt-frontend-jaxrs.version>3.2.14</cxf-rt-frontend-jaxrs.version>
 
-		<jackson-databind.version>2.12.6.1</jackson-databind.version>
+		<jackson-databind.version>2.12.7.1</jackson-databind.version>
 		<ngdbc.version>2.12.7</ngdbc.version>
 		<commons-dbcp2.version>2.8.0</commons-dbcp2.version>
-		<jettison.version>1.4.1</jettison.version>
+		<jettison.version>1.5.4</jettison.version>
 		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
 		<maven-war-plugin.version>3.0.0</maven-war-plugin.version>
 		<maven-dependency-plugin.version>3.0.0</maven-dependency-plugin.version>
@@ -59,10 +59,13 @@
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
 		<build-helper-maven-plugin.version>1.12</build-helper-maven-plugin.version>
 		<!-- Code Quality Tools Versions -->
-		<maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
+		<maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
 		<maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
 		<findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
 		<cloud-security-xsuaa.version>2.8.8</cloud-security-xsuaa.version>
+		<java.version>11</java.version>
+		 <maven.compiler.source>${java.version}</maven.compiler.source>
+		 <maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
 
 
@@ -92,6 +95,18 @@
 				<version>${javax.servlet-api.version}</version>
 				<scope>compile</scope>
 			</dependency>
+
+<dependency>
+  <groupId>javax.xml.bind</groupId>
+  <artifactId>jaxb-api</artifactId>
+  <version>2.3.1</version>
+</dependency>
+
+<dependency>
+  <groupId>org.glassfish.jaxb</groupId>
+  <artifactId>jaxb-runtime</artifactId>
+  <version>2.3.1</version>
+</dependency>
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>
@@ -190,45 +205,6 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${maven-compiler-plugin.version}</version>
-					<configuration>
-						<source>1.8</source>
-						<target>1.8</target>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>${maven-war-plugin.version}</version> <!-- prevent Maven warning -->
-				</plugin>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-clean-plugin</artifactId>
-					<version>${maven-clean-plugin.version}</version>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-dependency-plugin</artifactId>
-					<version>${maven-dependency-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>${maven-failsafe-plugin.version}</version>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-antrun-plugin</artifactId>
-					<version>${maven-antrun-plugin.version}</version>
-				</plugin>
 
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -383,18 +359,6 @@
 									<goal>checkstyle</goal>
 								</goals>
 								<phase>verify</phase>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>findbugs-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<phase>verify</phase>
-								<goals>
-									<goal>findbugs</goal>
-								</goals>
 							</execution>
 						</executions>
 					</plugin>

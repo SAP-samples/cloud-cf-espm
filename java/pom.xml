@@ -62,7 +62,7 @@
 		<maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
 		<maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
 		<findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
-		<cloud-security-xsuaa.version>2.8.8</cloud-security-xsuaa.version>
+		<cloud-security-xsuaa.version>2.17.2</cloud-security-xsuaa.version>
 		<java.version>11</java.version>
 		 <maven.compiler.source>${java.version}</maven.compiler.source>
 		 <maven.compiler.target>${java.version}</maven.compiler.target>

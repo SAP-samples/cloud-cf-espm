@@ -39,7 +39,7 @@
 		<olingo.version>2.0.11</olingo.version>
 		<slf4j.version>1.7.30</slf4j.version>
 		<junit.version>4.13.2</junit.version>
-		<derby.version>10.14.2.0</derby.version>
+		<derby.version>10.17.1.0</derby.version>
 		<eclipselink.version>2.7.8</eclipselink.version>
 		<javax.servlet-api.version>4.0.1</javax.servlet-api.version>
 		<httpclient.version>4.5.13</httpclient.version>

@@ -1,10 +1,18 @@
+
 # ESPM in Cloud Foundry
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-cf-espm)](https://api.reuse.software/info/github.com/SAP-samples/cloud-cf-espm)
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
 
-The ESPM (Enterprise Sales & Procurement Model) application is a reference application which demonstrates how to build applications on SAP Business Technology Platform (Cloud Foundry) with the Java runtime. 
+## ⚠ ARCHIVED - NO MAINTENANCE ⚠
+
+📢 **Please be aware that this sample is no longer maintained and the repository is archived**
+
+As an alternative, we recommend to use the samples based on the [SAP BTP Developer Guide](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model).
 
 # Description
+
+The ESPM (Enterprise Sales & Procurement Model) application is a reference application which demonstrates how to build applications on SAP Business Technology Platform (Cloud Foundry) with the Java runtime. 
 
 ESPM application has 2 underlying applications
 - webshop: this application is a webshopping app, which does not have any authentication.
